@@ -1,0 +1,19 @@
+{
+  "name": "placementbackend",
+  "version": "1.0.0",
+  "description": "a basic placement app to deploay",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "author": "sunita",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "env": "^0.0.2",
+    "express": "^4.21.2",
+    "mysql2": "^3.12.0"
+  }
+}
