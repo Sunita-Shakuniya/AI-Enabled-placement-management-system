@@ -1,0 +1,17 @@
+import React from 'react'
+import Layout from '../../../components/layout/Layout'
+import ListOffers from '../tabulardata/ListOffers.admin'
+
+function Offers() {
+  return (
+    <div>
+      <Layout>
+        <div className='container mx-auto p-6'>
+          <ListOffers/>
+        </div>
+      </Layout>
+    </div>
+  )
+}
+
+export default Offers

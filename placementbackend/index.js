@@ -1,8 +1,10 @@
 import dotenv from 'dotenv'
 dotenv.config()
 import express from 'express';
-import pool from "./src/config/database.js"; // ✅ Import the database pool
-import studentRoutes from "./src/routes/studentRoutes.js";
+import studentRoutes from "./src/routes/student.routes.js";
+import offersRoutes from "./src/routes/offers.routes.js";
+import CompaniesRouters from './src/routes/companies..routes.js';
+import PlacementDriveRoutes from './src/routes/drives.routes.js';
 const app = express()
 const port = process.env.PORT || 3000; // ✅ Use environment variable or default port
 /*
@@ -12,7 +14,9 @@ app.get('/', (req, res) => {
 */
 app.use(express.json()); // Middleware to parse JSON
 app.use("/api/students", studentRoutes);
-
+app.use("/api/offers", offersRoutes);
+app.use("/api/companies", CompaniesRouters);
+app.use("/api/drives", PlacementDriveRoutes);
 // ✅ New Route to Get Student Data
 /*
 app.get("/api/students", async (req, res) => {

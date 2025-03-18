@@ -1,4 +1,4 @@
-import React, { Fragment, useContext, useEffect, useState } from 'react';
+import React, { Fragment, useContext, useEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Dialog, Transition } from '@headlessui/react';
 import { RxCross2 } from 'react-icons/rx';
@@ -19,6 +19,30 @@ function Navbar() {
     };
 
     const currentPath = location.pathname;
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [isMobileDropdownOpen, setIsMobileDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setIsDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+  // Toggle function for mobile dropdown
+  const toggleMobileDropdown = () => {
+    setIsMobileDropdownOpen(!isMobileDropdownOpen);
+  };
 
     return (
         <div style={{ width: "100%" }} className="bg-white sticky top-0 z-50 w-full">
@@ -66,7 +90,38 @@ function Navbar() {
                                     <Link to="/about" className="text-sm font-medium text-gray-900">About</Link>
                                     <Link to="/jobs" className="text-sm font-medium text-gray-900">Jobs</Link>
                                     <Link to="/recruiters" className="text-sm font-medium text-gray-900">Recruiters</Link>
-                                    <Link to="/admin" className="text-sm font-medium text-gray-900">Admin Panel</Link>
+                                    {/* Admin Panel Dropdown */}
+                                    <div className="flex flex-col space-y-2">
+                                    <button
+                                        onClick={toggleMobileDropdown}
+                                        className="flex items-center justify-between text-sm font-medium text-gray-900"
+                                    >
+                                        <span>Admin Panel</span>
+                                    </button>
+                                    {/* Dropdown Menu */}
+                                    {isMobileDropdownOpen && (
+                                        <div className="pl-4 space-y-2">
+                                        <Link
+                                            to="/admin/dashboard"
+                                            className="block text-sm text-gray-700 hover:text-blue-700"
+                                        >
+                                            Dashboard
+                                        </Link>
+                                        <Link
+                                            to="/admin/companies"
+                                            className="block text-sm text-gray-700 hover:text-blue-700"
+                                        >
+                                            Companies
+                                        </Link>
+                                        <Link
+                                            to="/admin/settings"
+                                            className="block text-sm text-gray-700 hover:text-blue-700"
+                                        >
+                                            Settings
+                                        </Link>
+                                        </div>
+                                    )}
+                                    </div>
                                     {user ? (
                                         <a onClick={Logout} className="text-sm font-medium text-gray-900 cursor-pointer">Logout</a>
                                     ) : (
@@ -102,7 +157,40 @@ function Navbar() {
                             <Link to="/about" className="text-sm font-medium text-gray-900">About</Link>
                             <Link to="/jobs" className="text-sm font-medium text-gray-900">Jobs</Link>
                             <Link to="/recruiters" className="text-sm font-medium text-gray-900">Recruiters</Link>
-                            <Link to="/admin" className="text-sm font-medium text-gray-900">Admin Panel</Link>
+                            
+                            {/* Admin Panel Dropdown */}
+                            <div className="relative" ref={dropdownRef}>
+                                <button
+                                onClick={toggleDropdown}
+                                className="flex items-center text-sm font-medium text-gray-900 hover:text-blue-700 focus:outline-none"
+                                >
+                                Admin Panel
+                                
+                                </button>
+                                {/* Dropdown Menu */}
+                                {isDropdownOpen && (
+                                <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg py-2 z-50">
+                                    <Link
+                                    to="/admin/dashboard"
+                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                    >
+                                    Dashboard
+                                    </Link>
+                                    <Link
+                                    to="/admin/companies"
+                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                    >
+                                    Companies
+                                    </Link>
+                                    <Link
+                                    to="/admin/settings"
+                                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                                    >
+                                    Settings
+                                    </Link>
+                                </div>
+                                )}
+                            </div>
                             {user ? (
                                 <a onClick={Logout} className="text-sm font-medium text-gray-900 cursor-pointer">Logout</a>
                             ) : (

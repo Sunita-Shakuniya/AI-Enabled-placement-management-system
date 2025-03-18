@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
-import { fetchStudents } from "../services/studentService";
-import Layout from "../components/layout/Layout";
+//import { fetchStudents } from "../../services/studentService";
+import Layout from "../../components/layout/Layout";
+import { fetchStudents } from "../../services/student.service";
 
 function Recruiters() {
   const [isSmallScreen, setIsSmallScreen] = useState(false);
@@ -51,7 +52,7 @@ function Recruiters() {
 
             {/* Student Details on Right */}
             <div className="w-2/3 px-4">
-              <h1 className="text-lg font-medium text-gray-900 mb-2"><strong>Name:</strong> {student.first_name} {student.last_name}</h1>
+              <h1 className="text-lg font-medium text-gray-900 mb-2"><strong>Name:</strong> {student.first_name}{student.last_name}</h1>
               <p className="text-sm text-gray-700"><strong>Email:</strong> {student.email}</p>
               <p className="text-sm text-gray-700"><strong>Phone:</strong> {student.phone}</p>
               <p className="text-sm text-gray-700"><strong>Course:</strong> {student.degree}</p>

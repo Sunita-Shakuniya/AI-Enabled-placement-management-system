@@ -2,7 +2,7 @@ import React from 'react'
 
 
     
-function Resouses() {
+function Resourses() {
   const [students, setStudents] = useState([]);
 
     useEffect(() => {
@@ -24,4 +24,4 @@ function Resouses() {
   )
 }
 
-export default Resouses
+export default Resourses
