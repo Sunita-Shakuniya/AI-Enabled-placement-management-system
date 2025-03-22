@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import { fetchPlacementDrives } from '../../../services/drives.services';
+import React from 'react'
+
 import PlacementDrives from '../../../hooks/PlacementDrives.hooks';
 
 function ListDrives() {

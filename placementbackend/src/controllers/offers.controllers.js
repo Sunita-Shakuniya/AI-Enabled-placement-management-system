@@ -6,7 +6,7 @@ export const getoffers = async (req, res) => {
         const [offers] = await pool.query("SELECT * FROM offers");
         res.json(offers);
     } catch (error) {
-        res.status(500).json({ error: "Database error" });
+        res.status(500).json({ error: "Database error while fetching offers " });
     }
 };
 

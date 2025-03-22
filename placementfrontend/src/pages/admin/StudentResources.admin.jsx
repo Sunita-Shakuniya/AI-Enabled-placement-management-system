@@ -1,12 +1,9 @@
-import Layout from '../../components/layout/Layout';
-import CalendarView from './visualize/CalenderView.admin';
-import PlacementDrives from '../../hooks/PlacementDrives.hooks';
-import { Card } from "flowbite-react";
-import viewIcon from './elements/view_icon.png';
-import AdminButtons from "../../components/elements/AdminButtons";
-function AdminCompanies() {
-    const placementDrives = PlacementDrives(); // Use the custom hook
+import React from 'react'
+import Layout from '../../components/layout/Layout'
+import { Card } from 'flowbite-react'
+import AdminButtons from '../../components/elements/AdminButtons'
 
+function StudentsResources() {
   return (
     <Layout>
         <section > 
@@ -19,33 +16,33 @@ function AdminCompanies() {
         </section> 
         <section>
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 p-2">
-          <Card href="/admin/companies/top" className="max-w-sm">
+          <Card href="/admin/resources/courses" className="max-w-sm">
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Top Recruiters
+              Courses
             </h5>
             <p className="font-normal text-gray-700 dark:text-gray-400">
               View the list of upcoming placement drives and their details.
             </p>
           </Card>
-          <Card href="/admin/companies/all" className="max-w-sm">
+          <Card href="/admin/resources/internships" className="max-w-sm">
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Registered Company
+              Internships  
             </h5>
             <p className="font-normal text-gray-700 dark:text-gray-400">
               View the list of upcoming placement drives and their details.
             </p>
           </Card>
-          <Card href="/admin/companies/offers" className="max-w-sm">
+          <Card href="/admin/resources/hackthons" className="max-w-sm">
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              Offers Received
+              Hackthons
             </h5>
             <p className="font-normal text-gray-700 dark:text-gray-400">
               View the list of upcoming placement drives and their details.
             </p>
           </Card>
-          <Card href="/admin/companies/new" className="max-w-sm">
+          <Card href="/admin/resources/references" className="max-w-sm">
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-              New Registration
+              References 
             </h5>
             <p className="font-normal text-gray-700 dark:text-gray-400">
               View the list of upcoming placement drives and their details.
@@ -54,22 +51,10 @@ function AdminCompanies() {
         {/* Add more cards here */}
         </div>
         </section>
-        <section>
-          <div className='flex flex-row justify-between py-3'>
-            <h2 className="text-xl font-semibold mb-4">Track Drives</h2>
-            <button
-              onClick={() => window.location.href = `/admin/companies/drives`}
-              className="flex items-stretch text-black bg-blue-600 hover:bg-blue-700 rounded-lg font-small rounded-full space-x-1 text-sm px-2 py-2 text-center mb-2"
-            >
-              <img src={viewIcon} alt="icon" className="w-4 h-4 " /> {/* Adjust size */}
-              <span>All drives</span> 
-            </button>
-          </div>
-          <CalendarView placementDrives={placementDrives} /> {/* Pass placementDrives to CalendarView */}
-        </section>
+        
         <AdminButtons/>
     </Layout>
-  );
-};
+  )
+}
 
-export default AdminCompanies;
+export default StudentsResources

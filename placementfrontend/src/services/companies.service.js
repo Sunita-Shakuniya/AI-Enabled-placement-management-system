@@ -9,3 +9,13 @@ export const fetchcompanies = async () => {
         return [];
     }
 };
+
+export const addCompany = async (companyData) => {
+    try {
+        const response = await axios.post("/api/companies/add", companyData);
+        return response.data;
+    } catch (error) {
+        console.error("Error adding company", error);
+        throw error; // Re-throw the error to handle it in the component
+    }
+};

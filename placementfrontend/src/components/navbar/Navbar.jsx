@@ -88,7 +88,7 @@ function Navbar() {
                                 <div className="flex flex-col space-y-6 border-t border-gray-200 px-4 py-6">
                                     <Link to="/" className="text-sm font-medium text-gray-900">Home</Link>
                                     <Link to="/about" className="text-sm font-medium text-gray-900">About</Link>
-                                    <Link to="/jobs" className="text-sm font-medium text-gray-900">Jobs</Link>
+                                    <Link to="/opportunities" className="text-sm font-medium text-gray-900">Explore</Link>
                                     <Link to="/recruiters" className="text-sm font-medium text-gray-900">Recruiters</Link>
                                     {/* Admin Panel Dropdown */}
                                     <div className="flex flex-col space-y-2">
@@ -114,10 +114,10 @@ function Navbar() {
                                             Companies
                                         </Link>
                                         <Link
-                                            to="/admin/settings"
+                                            to="/admin/resources"
                                             className="block text-sm text-gray-700 hover:text-blue-700"
                                         >
-                                            Settings
+                                            Resources
                                         </Link>
                                         </div>
                                     )}
@@ -155,7 +155,7 @@ function Navbar() {
                         <div className="ml-auto hidden lg:flex lg:items-center lg:space-x-6">
                             <Link to="/" className="text-sm font-medium text-gray-900">Home</Link>
                             <Link to="/about" className="text-sm font-medium text-gray-900">About</Link>
-                            <Link to="/jobs" className="text-sm font-medium text-gray-900">Jobs</Link>
+                            <Link to="/opportunities" className="text-sm font-medium text-gray-900">Explore</Link>
                             <Link to="/recruiters" className="text-sm font-medium text-gray-900">Recruiters</Link>
                             
                             {/* Admin Panel Dropdown */}
@@ -183,10 +183,10 @@ function Navbar() {
                                     Companies
                                     </Link>
                                     <Link
-                                    to="/admin/settings"
+                                    to="/admin/resources"
                                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                                     >
-                                    Settings
+                                    Resources
                                     </Link>
                                 </div>
                                 )}
