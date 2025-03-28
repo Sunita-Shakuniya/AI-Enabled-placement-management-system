@@ -5,7 +5,7 @@ import AdminButtons from '../../../components/elements/AdminButtons';
 
 function Offers() {
   return (
-    <div>
+    <div className='bg-blue-200 '>
       <Layout>
         <div className='container mx-auto p-6'>
           <ListOffers/>

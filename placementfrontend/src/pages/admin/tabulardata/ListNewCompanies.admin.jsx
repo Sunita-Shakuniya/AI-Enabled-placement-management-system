@@ -51,23 +51,23 @@ function ListNewCompanies() {
     if (error) return <p>{error}</p>;
 
     return (
-        <div className="mb-8 mx-8">
+        <div className=" mx-4 my-4">
             <div className="overflow-x-auto">
-                <table className="min-w-full bg-white border border-gray-300">
+                <table className="min-w-full bg-white rounded-lg shadow-md overflow-hidden">
                     <thead>
-                        <tr className="bg-gray-100 border-b">
-                            <th className="px-6 py-3 text-left text-sm font-medium text-gray-600">ID</th>
-                            <th className="px-6 py-3 text-left text-sm font-medium text-gray-600">Organization Name</th>
-                            <th className="px-6 py-3 text-left text-sm font-medium text-gray-600">Contact Email</th>
-                            <th className="px-6 py-3 text-left text-sm font-medium text-gray-600">Action</th>
+                        <tr className="bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+                            <th className="px-6 py-3 text-left text-sm font-semibold">ID</th>
+                            <th className="px-6 py-3 text-left text-sm font-semibold">Organization Name</th>
+                            <th className="px-6 py-3 text-left text-sm font-semibold">Contact Email</th>
+                            <th className="px-6 py-3 text-left text-sm font-semibold">Action</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody className='divide-y divide-gray-200'>
                         {companies.map((company) => (
-                            <tr key={company.id} className="border-b hover:bg-gray-50">
-                                <td className="px-6 py-2">{company.id}</td>
-                                <td className="px-6 py-2">{company.organization_name}</td>
-                                <td className="px-6 py-2">{company.email}</td>
+                            <tr key={company.id} className="hover:bg-gray-50 transition-colors">
+                                <td className="px-6 py-2"><p className='text-sm text-gray-600'>{company.id}</p></td>
+                                <td className="px-6 py-2"><h6 className='text-sm font-semibold text-gray-900'>{company.organization_name}</h6></td>
+                                <td className="px-6 py-2"><p className='text-sm text-gray-600'>{company.email}</p></td>
                                 <td className="flex px-6 py-2 gap-x-2">
                                                       <button
                                                         onClick={() => handleView(company.id) }

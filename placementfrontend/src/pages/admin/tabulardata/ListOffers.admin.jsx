@@ -20,27 +20,27 @@ function ListOffers() {
     
   return (
     <div>
-      <div className="mb-8">
-                <h2 className="text-xl font-semibold mb-4">Offers List</h2>
+      <div className="mb-4">
+                <h2 className="text-2xl font-bold text-center my-4">List Of Offers Received </h2>
                 <div className="overflow-x-auto">
-                <table className="min-w-full bg-white border border-gray-300">
+                <table className="min-w-full bg-white rounded-lg shadow-md overflow-hidden">
                     <thead>
-                    <tr className="bg-gray-100 border-b">
-                        <th className="px-6 py-3 text-left text-sm font-medium text-gray-600">Student ID</th>
-                        <th className="px-6 py-3 text-left text-sm font-medium text-gray-600">Company ID</th>
-                        <th className="px-6 py-3 text-left text-sm font-medium text-gray-600">CTC (LPA)</th>
-                        <th className="px-6 py-3 text-left text-sm font-medium text-gray-600">Role</th>
-                        <th className="px-6 py-3 text-left text-sm font-medium text-gray-600">Offer Date</th>
+                    <tr className="bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+                        <th className="px-6 py-3 text-left text-sm font-semibold">Student ID</th>
+                        <th className="px-6 py-3 text-left text-sm font-semibold">Company ID</th>
+                        <th className="px-6 py-3 text-left text-sm font-semibold">CTC (LPA)</th>
+                        <th className="px-6 py-3 text-left text-sm font-semibold">Role</th>
+                        <th className="px-6 py-3 text-left text-sm font-semibold">Offer Date</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody className='divide-y divide-gray-200'>
                     {offers.map((offer) => (
-                        <tr key={offer.offer_id} className="border-b hover:bg-gray-50">
-                        <td className="px-6 py-2">{offer.student_id}</td>
-                        <td className="px-6 py-2">{offer.company_id}</td>
-                        <td className="px-6 py-2">{offer.ctc}</td>
-                        <td className="px-6 py-2">{offer.role}</td>
-                        <td className="px-6 py-2">{offer.offer_date}</td>
+                        <tr key={offer.offer_id} className="hover:bg-gray-50 transition-colors">
+                        <td className="px-6 py-2"><p className='text-sm text-gray-600'>{offer.student_id}</p></td>
+                        <td className="px-6 py-2"><p className='text-sm text-gray-600'>{offer.company_id}</p></td>
+                        <td className="px-6 py-2"><h6 className='text-sm font-semibold text-gray-900'>{offer.ctc}</h6></td>
+                        <td className="px-6 py-2"><h5 className='text-sm font-semibold text-gray-900'>{offer.role}</h5></td>
+                        <td className="px-6 py-2"><p className='text-sm text-gray-600'>{offer.offer_date}</p></td>
                         </tr>
                     ))}
                     </tbody>

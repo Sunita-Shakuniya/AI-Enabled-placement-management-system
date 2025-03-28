@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
 import About from "./pages/about_us/About";
-import Resourses from "./pages/resourses/Resourses";
+//import Resourses from "./pages/resourses/Resourses";
 import AdminDashboard from "./pages/admin/Dashboard.admin";
 import AdminCompanies from "./pages/admin/Companies.admin";
 import Drives from "./pages/admin/companyPages/Drives.admin.pages";
@@ -33,7 +33,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/opportunities" element={<Opportunities />} />
         <Route path="/opportunities/result" element={<Result />} />
-        <Route path="/opportunities/resouses" element={<Resourses />} />
+        {/** <Route path="/opportunities/resouses" element={<Resourses />} />*/}
         <Route path="/recruiters" element={<Recruiters/>} />
         <Route path="/recruiters/success" element={<SuccessForm/>} />
         <Route path="/admin/companies/drives" element={<Drives/>} />

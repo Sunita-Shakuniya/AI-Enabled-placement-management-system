@@ -48,8 +48,8 @@ export const submitRecruiterForm = async (req, res) => {
         const [result] = await pool.query(query, values);
         res.status(200).json({ message: "Form submitted successfully", id: result.insertId });
     } catch (error) {
-        console.error("Error submitting form:", error);
-        res.status(500).json({ error: "Database error" });
+        console.error("Database error while submitting Recruiters form:", error);
+        res.status(500).json({ error: "Database error while submitting Recruiters form" });
     }
 };
 
@@ -75,7 +75,7 @@ export const getRecruiterFormById = async (req, res) => {
         res.json(form[0]);
     } catch (error) {
         console.error("Error fetching recruiter form:", error);
-        res.status(500).json({ error: "Database error while fetching recruiters table" });
+        res.status(500).json({ error: "Database error while fetching recruiters submited form" });
     }
 };
 
@@ -87,7 +87,7 @@ export const moveToCompanies = async (req, res) => {
         // Step 1: Fetch the recruiter form data
         const [form] = await pool.query("SELECT * FROM recruiter_form WHERE id = ?", [id]);
         if (form.length === 0) {
-            return res.status(404).json({ error: "Form not found" });
+            return res.status(404).json({ error: "Error while fetching rescuiter Form using id" });
         }
 
         const { organization_name, website_url, email } = form[0];

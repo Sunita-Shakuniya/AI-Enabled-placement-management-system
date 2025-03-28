@@ -22,6 +22,6 @@ export const addStudent = async (req, res) => {
         res.status(201).json({ message: "Student added successfully" });
     } catch (error) {
         console.error(error);
-        res.status(500).json({ error: "Error adding student" });
+        res.status(500).json({ error: "Error adding new student" });
     }
 };

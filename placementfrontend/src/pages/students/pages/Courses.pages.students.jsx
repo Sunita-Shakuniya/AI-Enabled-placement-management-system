@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Card } from 'flowbite-react';
 import { fetchcourses } from '../../../services/courses.services';
-function Courses() {
+import { useNavigate } from 'react-router-dom';
+function Courses({limit}) {
+  const navigate = useNavigate();
     const [courses, setcourses] = useState([]);
       useEffect(() => {
         async function getData() {
@@ -10,15 +12,16 @@ function Courses() {
         }
         getData();
       }, []);
+      const displayCourses = limit ? courses.slice(0, limit) : courses;
   return (
-    <section className='bg-blue-200 p-4 '>
+    <section className='bg-gray-100 p-4 '>
         <h1 className="text-2xl font-bold text-center my-4">Top Courses Platforms</h1>  
              <div className="App">
              <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 mx-4 my-4'>
-                {courses.map((course) => (
-                  <Card key={course.id} className="bg-gradient-to-r from-blue-500 to-purple-600 mx-2 my-4 " href={course.platform_link}>
-                    <div className="h-50 overflow-hidden">
-                    <img src={course.platform_logo} alt={course.platform_name} className="w-20 h-full object-cover object-cover" />
+                {displayCourses.map((course) => (
+                  <Card key={course.id} className="bg-gradient-to-r from-white to-gray-200 mx-2 my-4 " href={course.platform_link}>
+                    <div className="h-50  overflow-hidden">
+                    <img src={course.platform_logo} alt={course.platform_name} className="w-20 h-20 h-full object-cover object-cover" />
                     </div>
                     <div className="text-center p-4">
                       <h2 className="text-xl font-bold text-center">{course.platform_name}</h2>
@@ -29,13 +32,28 @@ function Courses() {
                       href={course.platform_link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-4 inline-block w-full text-center bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600"
+                      className="mt-4 mb-2 inline-block w-full text-center bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600 "
                     >
                       Explore Now
                     </a>
                   </Card>
                 ))}
               </div>
+              {/* "View More" Button (only shows if there are more items than the limit) */}
+              {limit && courses.length > limit && (
+              <div className="text-center mt-6 ">
+                <button
+                  onClick={() => navigate('/')} // Navigate to another page
+                  className="w-10 h-10 hover:text-grey-800   bg-gradient-to-r from-white via-gray-200 to-blue-200 transition-colors text-center rounded-full animate-bounce"
+                > 
+                <svg className="w-6 h-6 text-indigo-800  hover:text-purple-800 dark:text-pink mx-2 my-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 14">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1v12m0 0 4-4m-4 4L1 9"/>
+                </svg>
+      
+                  
+                </button>
+              </div>
+              )}
             </div>
     </section>
   )

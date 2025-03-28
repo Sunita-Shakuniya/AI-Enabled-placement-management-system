@@ -32,13 +32,13 @@ const FAQSection = () => {
   ];
 
   return (
-    <div className="p-6 bg-white  shadow-lg dark:bg-white-100" id="faq">
+    <div className="m-6 p-6 bg-white border-2 border-gray-100  shadow-lg dark:bg-white-100" id="faq">
       <h1 className="text-2xl font-semibold text-black-800 dark:text-black mb-6">
         Frequently Asked Questions
       </h1>
 
       {faqs.map((faq, index) => (
-        <div key={index} className="mb-4 border-b border-gray-200 dark:border-black-700">
+        <div key={index} className="mb-4 border-b border-gray-300 dark:border-black-700">
           <h2>
             <button
               onClick={() => toggleAccordion(index)}

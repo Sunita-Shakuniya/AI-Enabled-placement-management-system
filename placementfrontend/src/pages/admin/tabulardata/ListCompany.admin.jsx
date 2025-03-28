@@ -20,47 +20,44 @@ function ListCompany() {
     }, []);
     
   return (
-    <div>
-      <h1 className="text-2xl font-bold mb-6">Companies</h1>
-            {/* Companies Table */}
-            <div className="mb-8">
-                <h2 className="text-xl font-semibold mb-4">Companies List</h2>
-                <div className="overflow-x-auto">
-                <table className="min-w-full bg-white border border-gray-300">
-                    <thead>
-                    <tr className="bg-gray-100 border-b">
-                    <th className="px-6 py-3 text-left text-sm font-medium text-gray-600">Company ID</th>
-                        <th className="px-6 py-3 text-left text-sm font-medium text-gray-600">Company Name</th>
-                        <th className="px-6 py-3 text-left text-sm font-medium text-gray-600">Industry</th>
-                        <th className="px-6 py-3 text-left text-sm font-medium text-gray-600">Location</th>
-                        <th className="px-6 py-3 text-left text-sm font-medium text-gray-600">Contact Email</th>
-                        <th className="px-6 py-3 text-left text-sm font-medium text-gray-600">Website</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {companies.map((company) => (
-                        <tr key={company.company_id} className="border-b hover:bg-gray-50">
-                        <td className="px-6 py-2">{company.company_id}</td>    
-                        <td className="px-6 py-2">{company.company_name}</td>
-                        <td className="px-6 py-2">{company.industry}</td>
-                        <td className="px-6 py-2">{company.location}</td>
-                        <td className="px-6 py-2">{company.contact_email}</td>
-                        <td className="px-6 py-2">
-                            <a
-                            href={company.website}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-blue-600 hover:text-blue-800"
-                            >
-                            {company.website}
-                            </a>
-                        </td>
-                        </tr>
-                    ))}
-                    </tbody>
-                </table>
-                </div>
-            </div>
+    <div className="bg-blue-200 ">
+        <h1 className="text-2xl font-bold text-center my-4">Companies</h1>         
+        <div className="overflow-x-auto">
+        <table className="min-w-full bg-white rounded-lg shadow-md overflow-hidden">
+            <thead>
+            <tr className="bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+                <th className="px-6 py-3 text-left text-sm font-semibold">Company ID</th>
+                <th className="px-6 py-3 text-left text-sm font-semibold">Company Name</th>
+                <th className="px-6 py-3 text-left text-sm font-semibold">Industry</th>
+                <th className="px-6 py-3 text-left text-sm font-semibold">Location</th>
+                <th className="px-6 py-3 text-left text-sm font-semibold">Contact Email</th>
+                <th className="px-6 py-3 text-left text-sm font-semibold">Website</th>
+            </tr>
+            </thead>
+            <tbody className='divide-y divide-gray-200'>
+            {companies.map((company) => (
+                <tr key={company.company_id} className="hover:bg-gray-50 transition-colors">
+                <td className="px-6 py-2"><p className="text-sm text-gray-600">{company.company_id}</p></td>    
+                <td className="px-6 py-2"><h6 className="text-sm font-semibold text-gray-900">{company.company_name}</h6></td>
+                <td className="px-6 py-2"><p className="text-sm text-gray-600">{company.industry}</p></td>
+                <td className="px-6 py-2"><p className="text-sm text-gray-600">{company.location}</p></td>
+                <td className="px-6 py-2"><p className="text-sm text-gray-600">{company.contact_email}</p></td>
+                <td className="px-6 py-2">
+                    <a
+                    href={company.website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:text-blue-800"
+                    >
+                    {company.website}
+                    </a>
+                </td>
+                </tr>
+            ))}
+            </tbody>
+        </table>
+        </div>
+            
     </div>
   )
 }

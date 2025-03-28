@@ -10,10 +10,10 @@ export default function Footer() {
                     <div className="lg:w-1/4 md:w-1/2 w-full px-4">
                         <h2 className="title-font font-medium text-gray-200 tracking-widest text-sm mb-3">CATEGORIES</h2>
                         <nav className="list-none mb-10">
-                            <li><a className="text-gray-300 hover:text-pink-500 hover:font-bold">Home</a></li>
-                            <li><a className="text-gray-300 hover:text-pink-500 hover:font-bold">Jobs</a></li>
-                            <li><a className="text-gray-300 hover:text-pink-500 hover:font-bold">Recruters</a></li>
-                            <li><a className="text-gray-300 hover:text-pink-500 hover:font-bold">Admin Panel</a></li>
+                            <li><Link to="/" className="text-gray-300 hover:text-pink-500 hover:font-bold">Home</Link></li>
+                            <li><Link to="/opportunities" className="text-gray-300 hover:text-pink-500 hover:font-bold">Explore</Link></li>
+                            <li><Link to="/recruiters" className="text-gray-300 hover:text-pink-500 hover:font-bold">Recruiters</Link></li>
+                            <li><Link to="/" className="text-gray-300 hover:text-pink-500 hover:font-bold">Admin Panel</Link></li>
                         </nav>
                     </div>
 
@@ -21,8 +21,8 @@ export default function Footer() {
                     <div className="lg:w-1/4 md:w-1/2 w-full px-4">
                         <h2 className="title-font font-medium text-gray-200 tracking-widest text-sm mb-3 uppercase">Students Service</h2>
                         <nav className="list-none mb-10">
-                            <li><Link to={'/'} className="text-gray-300 hover:text-pink-500 hover:font-bold">24/7 Support</Link></li>
-                            <li><Link to={'/'} className="text-gray-300 hover:text-pink-500 hover:font-bold">Personalized Consultation</Link></li>
+                            <li><Link to={'/about'} className="text-gray-300 hover:text-pink-500 hover:font-bold">24/7 Support</Link></li>
+                            <li><Link to={'/'} className="text-gray-300 hover:text-pink-500 hover:font-bold">Personalized Recommendation</Link></li>
                             <li><Link to={'/'} className="text-gray-300 hover:text-pink-500 hover:font-bold">Issue Resolution</Link></li>
                             <li><Link to={'/'} className="text-gray-300 hover:text-pink-500 hover:font-bold">Students Feedback</Link></li>
                         </nav>
@@ -30,19 +30,19 @@ export default function Footer() {
 
                     {/* Services Section */}
                     <div className="lg:w-1/4 md:w-1/2 w-full px-4">
-                        <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3">Services</h2>
+                        <h2 className="title-font font-medium text-white tracking-widest text-sm mb-3">Available Resourses</h2>
                         <nav className="list-none mb-10">
-                            <li><Link to={'/'} className="text-gray-300 hover:text-pink-500 hover:font-bold">Courses</Link></li>
-                            <li><Link to={'/'} className="text-gray-300 hover:text-pink-500 hover:font-bold">Resourses</Link></li>
-                            <li><Link to={'/'} className="text-gray-300 hover:text-pink-500 hover:font-bold">Events</Link></li>
-                            <li><Link to={'/'} className="text-gray-300 hover:text-pink-500 hover:font-bold">Internships</Link></li>
-                            <li><Link to={'/'} className="text-gray-300 hover:text-pink-500 hover:font-bold">Problem Statements</Link></li>
+                            <li><Link to={'/opportunities'} className="text-gray-300 hover:text-pink-500 hover:font-bold">Courses</Link></li>
+                            <li><Link to={'/opportunities'} className="text-gray-300 hover:text-pink-500 hover:font-bold">Resourses</Link></li>
+                            <li><Link to={'/opportunities'} className="text-gray-300 hover:text-pink-500 hover:font-bold">EduCarre</Link></li>
+                            <li><Link to={'/opportunities'} className="text-gray-300 hover:text-pink-500 hover:font-bold">Internships</Link></li>
+                            <li><Link to={'/opportunities'} className="text-gray-300 hover:text-pink-500 hover:font-bold">Problem Statements</Link></li>
                             <li><Link to={'/'} className="text-gray-300 hover:text-pink-500 hover:font-bold">Projects</Link></li>
                             <li><Link to={'/'} className="text-gray-300 hover:text-pink-500 hover:font-bold">Resume Analysis</Link></li>
                         </nav>
                     </div>
 
-                    {/* Payment Image */}
+                    {/* Footer Image */}
                     <div className="lg:w-1/4 md:w-1/2 w-full px-4">
                         <img src="https://img.freepik.com/free-vector/illustration-with-business-people-design_23-2148468477.jpg?t=st=1740405017~exp=1740408617~hmac=386469e08eaaa61de9883ee243eed601a7c5e5e139b6c716a95d08745a0b04ad&w=1380" alt="Payment Methods" />
                     </div>
@@ -54,7 +54,7 @@ export default function Footer() {
                 <div className="container px-5 py-3 mx-auto flex items-center sm:flex-row flex-col">
                     <Link to={'/'} className="flex">
                         <div className="flex">
-                            <h1 className="text-2xl font-bold text-black px-2 py-1 rounded">Event</h1>
+                            <h1 className="text-2xl font-bold text-black px-2 py-1 rounded">EduCareer</h1>
                         </div>
                     </Link>
                     

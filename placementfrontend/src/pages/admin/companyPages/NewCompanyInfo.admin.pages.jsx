@@ -35,6 +35,7 @@ function CompanyInfo() {
     if (!company) return <p>No data found</p>;
 
     return (
+        <div className='bg-blue-200 '>
         <Layout>
         <div className="p-6 bg-white rounded-lg shadow-md my-8">
             <h2 className="text-2xl font-bold mb-6">Company Details</h2>
@@ -134,6 +135,7 @@ function CompanyInfo() {
         </div>
         <AdminButtons/>
         </Layout>
+        </div>
     );
 }
 

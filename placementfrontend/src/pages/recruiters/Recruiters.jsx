@@ -6,6 +6,9 @@ function Recruiters() {
   return (
     <div>
       <Layout>
+        <section>
+          
+        </section>
         <RecruiterForm/>
       </Layout>
     </div>

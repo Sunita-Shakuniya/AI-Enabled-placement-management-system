@@ -7,25 +7,25 @@ function ListDrives() {
 
   return (
     <div>
-        <div className="mb-8">
-                <h2 className="text-xl font-semibold mb-4">Drives</h2>
+        <div className="bg-blue-200">
+                <h2 className="text-2xl font-bold text-center my-4">List Of All Drives</h2>
                 <div className="overflow-x-auto">
-                <table className="min-w-full bg-white border border-gray-300">
+                <table className="min-w-full bg-white rounded-lg shadow-md overflow-hidden">
                     <thead>
-                    <tr className="bg-gray-100 border-b">
-                        <th className="px-6 py-3 text-left text-sm font-medium text-gray-600">Drive ID</th>
-                        <th className="px-6 py-3 text-left text-sm font-medium text-gray-600">Company ID</th>
-                        <th className="px-6 py-3 text-left text-sm font-medium text-gray-600">Drive Date</th>
-                        <th className="px-6 py-3 text-left text-sm font-medium text-gray-600">Status</th>
+                    <tr className="bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+                        <th className="px-6 py-3 text-left text-sm font-semibold">Drive ID</th>
+                        <th className="px-6 py-3 text-left text-sm font-semibold">Company ID</th>
+                        <th className="px-6 py-3 text-left text-sm font-semibold">Drive Date</th>
+                        <th className="px-6 py-3 text-left text-sm font-semibold">Status</th>
                     </tr>
                     </thead>
-                    <tbody>
+                    <tbody className='divide-y divide-gray-200'>
                     {placementDrives.map((drive) => (
-                        <tr key={drive.drive_id} className="border-b hover:bg-gray-50">
-                        <td className="px-6 py-2">{drive.drive_id}</td>
-                        <td className="px-6 py-2">{drive.company_id}</td>
-                        <td className="px-6 py-2">{drive.drive_date}</td>
-                        <td className="px-6 py-2">{drive.status}</td>
+                        <tr key={drive.drive_id} className="hover:bg-gray-50 transition-colors">
+                        <td className="px-6 py-2"><p className='text-sm text-gray-600'>{drive.drive_id}</p></td>
+                        <td className="px-6 py-2"><p className='text-sm text-gray-600'>{drive.company_id}</p></td>
+                        <td className="px-6 py-2"><p className='text-sm text-gray-600'>{drive.drive_date}</p></td>
+                        <td className="px-6 py-2"><p className='text-sm text-gray-600'>{drive.status}</p></td>
                         </tr>
                     ))}
                     </tbody>

@@ -114,10 +114,11 @@ function AdminDashboard() {
 
   return (
     <Layout>
+      <h1 className="text-2xl font-bold text-center my-4">Placement Data Analysis</h1>    
       <PlacementCharts />
-      <section>
+      <section className="bg-blue-200">
         <div className="container mx-auto p-6">
-          <h1 className="text-2xl font-bold text-center mb-6">PlacementCRM - Student Details</h1>
+          <h1 className="text-2xl font-bold text-center my-4"> Student Details</h1>
           <div className="flex flex-col my-4">
             <p className="text-center text-gray-700 my-2">Total Students: {students.length}</p>
             <div className="flex">
@@ -147,31 +148,31 @@ function AdminDashboard() {
           
 
           <div className="overflow-x-auto">
-            <table className="min-w-full bg-white border border-gray-300">
+            <table className="min-w-full bg-white rounded-lg shadow-md overflow-hidden">
               <thead>
-                <tr className="bg-gray-100 border-b">
-                <th className="px-6 py-3 text-left text-sm font-medium text-gray-600 cursor-pointer" onClick={() => handleSort('student_id')}>Student ID</th>
-                  <th className="px-6 py-3 text-left text-sm font-medium text-gray-600 cursor-pointer" onClick={() => handleSort('first_name')}>Name</th>
-                  <th className="px-6 py-3 text-left text-sm font-medium text-gray-600 cursor-pointer" onClick={() => handleSort('email')}>Email</th>
-                  <th className="px-6 py-3 text-left text-sm font-medium text-gray-600 cursor-pointer" onClick={() => handleSort('phone')}>Phone</th>
-                  <th className="px-6 py-3 text-left text-sm font-medium text-gray-600 cursor-pointer" onClick={() => handleSort('degree')}>Course</th>
-                  <th className="px-6 py-3 text-left text-sm font-medium text-gray-600 cursor-pointer" onClick={() => handleSort('cgpa')}>CGPA</th>
-                  <th className="px-6 py-3 text-left text-sm font-medium text-gray-600 cursor-pointer" onClick={() => handleSort('skills')}>Skills</th>
-                  <th className="px-6 py-3 text-left text-sm font-medium text-gray-600 cursor-pointer" onClick={() => handleSort('status')}>Status</th>
-                  <th className="px-6 py-3 text-left text-sm font-medium text-gray-600">Actions</th>
+                <tr className="bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+                <th className="px-6 py-3 text-left text-sm font-semibold cursor-pointer" onClick={() => handleSort('student_id')}>Student ID</th>
+                  <th className="px-6 py-3 text-left text-sm font-semibold cursor-pointer" onClick={() => handleSort('first_name')}>Name</th>
+                  <th className="px-6 py-3 text-left text-sm font-semibold cursor-pointer" onClick={() => handleSort('email')}>Email</th>
+                  <th className="px-6 py-3 text-left text-sm font-semibold cursor-pointer" onClick={() => handleSort('phone')}>Phone</th>
+                  <th className="px-6 py-3 text-left text-sm font-semibold cursor-pointer" onClick={() => handleSort('degree')}>Course</th>
+                  <th className="px-6 py-3 text-left text-sm font-semibold cursor-pointer" onClick={() => handleSort('cgpa')}>CGPA</th>
+                  <th className="px-6 py-3 text-left text-sm font-semibold cursor-pointer" onClick={() => handleSort('skills')}>Skills</th>
+                  <th className="px-6 py-3 text-left text-sm font-semibold cursor-pointer" onClick={() => handleSort('status')}>Status</th>
+                  <th className="px-6 py-3 text-left text-sm font-semibold">Actions</th>
                 </tr>
               </thead>
               <tbody>
                 {currentItems.map((student) => (
-                  <tr key={student.student_id} className="border-b hover:bg-gray-50">
-                    <td className="px-6 py-2">{student.student_id}</td>
-                    <td className="px-6 py-2">{student.first_name} {student.last_name}</td>
-                    <td className="px-6 py-2">{student.email}</td>
-                    <td className="px-6 py-2">{student.phone}</td>
-                    <td className="px-6 py-2">{student.degree}</td>
-                    <td className="px-6 py-2">{student.cgpa}</td>
-                    <td className="px-6 py-2">{student.skills}</td>
-                    <td className="px-6 py-2">{student.status}</td>
+                  <tr key={student.student_id} className="divide-y divide-gray-200">
+                    <td className="px-6 py-2"><p className="text-sm text-gray-600"></p>{student.student_id}</td>
+                    <td className="px-6 py-2"><h4 className="text-sm font-semibold text-gray-900"></h4>{student.first_name} {student.last_name}</td>
+                    <td className="px-6 py-2"><p className="text-sm text-gray-600"></p>{student.email}</td>
+                    <td className="px-6 py-2"><p className="text-sm text-gray-600"></p>{student.phone}</td>
+                    <td className="px-6 py-2"><p className="text-sm text-gray-600"></p>{student.degree}</td>
+                    <td className="px-6 py-2"><p className="text-sm text-gray-600"></p>{student.cgpa}</td>
+                    <td className="px-6 py-2"><p className="text-sm text-gray-600"></p>{student.skills}</td>
+                    <td className="px-6 py-2"><h6 className="text-sm font-semibold text-gray-900"></h6>{student.status}</td>
                     <td className="flex px-6 py-2 gap-x-2">
                       <button
                         onClick={() => window.location.href = `/studentinfo/${student.id}`}

@@ -3,13 +3,13 @@ import icon from './addicon.png'
 function AdminButtons() {
   return (
     <div className="fixed bottom-4 right-4 flex flex-col space-y-2">
-      <a href='/admin/addstudent'  className="flex text-black bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-3 focus:ring-purple-300 font-small rounded-full space-x-2 text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">
-        <img src={icon} alt="icon" className="w-6 h-6" /> {/* Adjust size */}
-        <span>Student</span> 
+      <a href='/admin/addstudent'  className="flex text-black  bg-gradient-to-r from-purple-700 via-purple-600 to-purple-800 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 shadow-lg shadow-black-500/90 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-2 py-3 text-center me-2 mb-2">
+        
+        <span><span className='font-black'> + </span> student</span> 
       </a>
-      <a href='/admin/addcompany'   className="flex text-black bg-purple-700 hover:bg-purple-800 focus:outline-none focus:ring-3 focus:ring-purple-300 font-small rounded-full space-x-2 text-sm px-5 py-2.5 text-center mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">
-        <img src={icon} alt="icon" className="w-6 h-6" /> {/* Adjust size */}
-        <span>Company</span> 
+      <a href='/admin/addcompany'   className="flex text-black bg-gradient-to-r from-purple-700 via-purple-600 to-purple-800 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800 shadow-lg shadow-black-500/90 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-2 py-3 text-center me-2 mb-2">
+        
+        <span><span className='font-black'> + </span>company</span> 
       </a>
     </div>
   )

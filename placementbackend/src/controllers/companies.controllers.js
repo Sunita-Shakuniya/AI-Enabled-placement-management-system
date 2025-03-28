@@ -6,7 +6,7 @@ export const getcompanies = async (req, res) => {
         const [companies] = await pool.query("SELECT * FROM companies");
         res.json(companies);
     } catch (error) {
-        res.status(500).json({ error: "Database error" });
+        res.status(500).json({ error: "Database error while fetching companies detail at initial " });
     }
 };
 
