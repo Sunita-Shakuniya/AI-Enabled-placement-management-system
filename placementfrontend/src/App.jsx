@@ -16,11 +16,12 @@ import Opportunities from "./pages/students/Opportunities";
 import Result from "./pages/students/pages/Result.pages.students";
 import StudentsResources from "./pages/admin/StudentResources.admin";
 import CoursesResources from "./pages/admin/resourcePages/Courses.resourcePages.admin";
-import HackthonsResource from "./pages/admin/resourcePages/Hackthons.resourcePages.admin";
 import InternshipResources from "./pages/admin/resourcePages/Internship.reourcePages.admin";
 import Resourcelearning from "./pages/admin/resourcePages/Resource.resourcePages.admin";
 import AddCompanyForm from "./pages/admin/add/AddCompany.add.admin";
 import AddStudentForm from "./pages/admin/add/AddStudent.add.admin";
+import HackathonsResource from "./pages/admin/resourcePages/Hackthons.resourcePages.admin";
+import ConducrDrive from "./pages/recruiters/ConducrDrive";
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
         <Route path="/opportunities/result" element={<Result />} />
         {/** <Route path="/opportunities/resouses" element={<Resourses />} />*/}
         <Route path="/recruiters" element={<Recruiters/>} />
+        <Route path="/recruiters/form" element={<ConducrDrive/>} />
         <Route path="/recruiters/success" element={<SuccessForm/>} />
         <Route path="/admin/companies/drives" element={<Drives/>} />
         <Route path="/admin/companies/offers" element={<Offers/>} />
@@ -46,7 +48,7 @@ function App() {
         <Route path="/admin/addstudent" element={<AddStudentForm/>} />
         <Route path="/admin/addcompany" element={<AddCompanyForm/>} />
         <Route path="/admin/resources/internships" element={<InternshipResources/>} />
-        <Route path="/admin/resources/hackthons" element={<HackthonsResource/>} />
+        <Route path="/admin/resources/hackathons" element={<HackathonsResource/>} />
         <Route path="/admin/resources/references" element={<Resourcelearning/>} />
         <Route path="/admin/resources/courses" element={<CoursesResources/>} />
       </Routes>

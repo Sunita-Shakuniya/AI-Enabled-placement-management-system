@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Navbar from '../../../components/navbar/Navbar'
 import { fetchHackathons } from '../../../services/hackathons.services';
 
-function HackthonsResource() {
+function HackathonsResource() {
   const [hackathons, sethackathons] = useState([]);
       useEffect(() => {
         async function getData() {
@@ -69,4 +69,4 @@ function HackthonsResource() {
   )
 }
 
-export default HackthonsResource
+export default HackathonsResource

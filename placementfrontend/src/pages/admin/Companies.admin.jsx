@@ -18,43 +18,44 @@ function AdminCompanies() {
               <h1 className="flex text-2xl mt-4 font-bold text-center my-2 text-indigo-900 justify-center">Welcome To  Companies Related Details!</h1>;
           </div> 
       
-        <div>
-          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 p-2">
-            <Card href="/admin/companies/top" className="max-w-sm  bg-gradient-to-r from-indigo-700 to-violet-700">
-              <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Top Recruiters
-              </h5>
-              <p className="font-normal text-gray-700 dark:text-gray-400">
-                Explore the list of top hrirng companies.
-              </p>
-            </Card>
-            <Card href="/admin/companies/all" className="max-w-sm bg-gradient-to-r from-indigo-600 to-violet-700">
-              <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Registered Company
-              </h5>
-              <p className="font-normal text-gray-700 dark:text-gray-400">
-                All the details of the companies are here.
-              </p>
-            </Card>
-            <Card href="/admin/companies/offers" className="max-w-sm bg-gradient-to-r from-indigo-700 to-violet-800">
-              <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                Offers Received
-              </h5>
-              <p className="font-normal text-gray-700 dark:text-gray-400">
-                List of our success stories and outcome.
-              </p>
-            </Card>
-            <Card href="/admin/companies/new" className="max-w-sm  bg-gradient-to-r from-indigo-800 to-violet-700">
-              <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-                New Registration
-              </h5>
-              <p className="font-normal text-gray-700 dark:text-gray-400">
-                What's New to our bucket list <span className='font-bold dark:text-gray-600'>?</span>
-              </p>
-            </Card>
-          {/* Add more cards here */}
-          </div>
-        </div>  </section> 
+          <div>
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 p-2">
+              <Card href="/admin/companies/top" className="max-w-sm  bg-gradient-to-r from-indigo-700 to-violet-700">
+                <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  Top Recruiters
+                </h5>
+                <p className="font-normal text-gray-700 dark:text-gray-400">
+                  Explore the list of top hrirng companies.
+                </p>
+              </Card>
+              <Card href="/admin/companies/all" className="max-w-sm bg-gradient-to-r from-indigo-600 to-violet-700">
+                <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  Registered Company
+                </h5>
+                <p className="font-normal text-gray-700 dark:text-gray-400">
+                  All the details of the companies are here.
+                </p>
+              </Card>
+              <Card href="/admin/companies/offers" className="max-w-sm bg-gradient-to-r from-indigo-700 to-violet-800">
+                <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  Offers Received
+                </h5>
+                <p className="font-normal text-gray-700 dark:text-gray-400">
+                  List of our success stories and outcome.
+                </p>
+              </Card>
+              <Card href="/admin/companies/new" className="max-w-sm  bg-gradient-to-r from-indigo-800 to-violet-700">
+                <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                  New Registration
+                </h5>
+                <p className="font-normal text-gray-700 dark:text-gray-400">
+                  What's New to our bucket list <span className='font-bold dark:text-gray-600'>?</span>
+                </p>
+              </Card>
+            {/* Add more cards here */}
+            </div>
+          </div>  
+        </section> 
         <section>
           <div className='flex flex-row justify-between py-3'>
             <h2 className="text-xl px-20 font-bold text-center my-2 text-indigo-900  mb-4">Track Drives</h2>

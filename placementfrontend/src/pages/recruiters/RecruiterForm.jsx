@@ -149,7 +149,7 @@ const RecruiterForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="max-w-2xl mx-auto p-6 bg-white rounded-lg shadow-md my-4">
-      <h2 className="text-2xl font-bold mb-6 text-gray-900">Recruiter Application Form</h2>
+      <h2 className="text-2xl font-bold mb-6 text-gray-900"> Application Form</h2>
       {/* Success Message */}
       {isSubmitted && (
             <div className="mb-5 p-4 bg-green-100 border border-green-400 text-green-700 rounded">

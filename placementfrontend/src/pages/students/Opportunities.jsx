@@ -6,31 +6,34 @@ import loginImg from './elements/Work_7.png';
 import Courses from './pages/Courses.pages.students';
 import Internship from './pages/Internship.pages.students';
 import Resources from './pages/Resources.pages.students';
-import Hackthons from './pages/Hackthons.pages.studnets';
+import Hackthons from './pages/Hackathons.pages.studnets';
 import FAQSection from './pages/FAQ.pages.students';
 import scrollToSection from './function';
 import result from './elements/result.png';
 import track from './elements/track.png';
+import Hackathons from './pages/Hackathons.pages.studnets';
 
 function Opportunities() {
   return (
     <Layout>
-    <section className='p-8 h-screen'>
+    <section className='p-8 min-h-screen flex flex-col'>
     {/**Admin Section**/}
-    < div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-2 gap-2  ">
-      <div className=" w-3/4  hidden sm:block">
+    < div className="grid grid-cols-1  sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-2 flex-grow  ">
+      <div className="   hidden lg:block sm:w-3/4">
         
-        <img src={MainImg} alt="icon"  className="w-50 h-200 " /> {/* Adjust size */}
+        <img src={MainImg} 
+        alt="icon"  
+        className="w-full max-w-[600px] h-auto mx-auto" /> {/* Adjust size */}
           
         <h6 className='text-xl font-semibold  mx-4  text-center'>Explore The Opportunities Now!</h6>
         
       </div>
  
-      < div className="grid grid-cols-2 h-1/3 sm:grid-cols-2 lg:grid-cols-2   gap-3 my-4 mx-4 lg:w-50 lg:h-40">
+      < div className="grid grid-cols-1 h-1/3 sm:grid-cols-1  md:grid-cols-1 lg:grid-cols-2   gap-4 p-4">
     
       <Card onClick={(e) => {
         e.stopPropagation(); // Prevent default behavior
-        scrollToSection('internship');}} className="max-w-sm bg-gradient-to-r from-indigo-800 via-indigo-800 to-indigo-600">
+        scrollToSection('internship');}} className="max-w-sm bg-gradient-to-r from-indigo-800 via-indigo-800 to-indigo-600 h-full">
           <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
           Internship
           </h5>
@@ -172,10 +175,10 @@ function Opportunities() {
     </section> 
     <section id='internship'><Internship limit={4} /></section> 
     
-    <section id='courses' className=''><Courses limit={4} /></section>
-    <section id='resources'><Resources limit={4} /></section>
-    <section id='hackthons'><Hackthons limit={4}/></section>
-    <section id='faq'><FAQSection  limit={4}/> </section>
+    <section id='courses' className='border-t border-gray-200'><Courses limit={4} /></section>
+    <section id='resources' className='border-t border-gray-200'><Resources limit={4} /></section>
+    <section id='hackthons' className='border-t border-gray-200'><Hackathons limit={4}/></section>
+    <section id='faq' className='border-t border-gray-200'><FAQSection  limit={4}/> </section>
     </Layout> 
   )
 }
