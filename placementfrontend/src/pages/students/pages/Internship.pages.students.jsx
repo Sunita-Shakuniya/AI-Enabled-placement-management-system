@@ -15,7 +15,7 @@ function Internship({id, limit}) {
   }, []);
   const displayInternships = limit ? platforms.slice(0, limit) : platforms;
   return (
-    <section className=' bg-green-100  p-4 '>
+    <section className=' p-4 '>
       <div className='flex flex-row items-center justify-center gap-4'>
           <img src={internshipImg} alt="Search" className="h-[200px]" />
           <h1 className="text-5xl font-extrabold text-center 

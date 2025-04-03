@@ -13,7 +13,7 @@ function Resources({limit}) {
       }, []);
       const displayResources = limit ? resources.slice(0, limit) : resources;  
   return (
-    <section className='bg-gradient-to-b from-blue-200 to-blue-100 p-4 '>
+    <section className=' p-4 '>
       <div className='flex flex-row items-center justify-center gap-4'>
           <img src={hackathonImg} alt="Search" className="h-[200px]" />
           <h1 className="text-5xl font-extrabold text-center 
@@ -52,7 +52,7 @@ function Resources({limit}) {
         <div className="text-center mt-6 ">
           <button
             onClick={() => navigate('/')} // Navigate to another page
-            className="w-10 h-10 hover:text-grey-800   bg-gradient-to-r from-white via-gray-200 to-blue-300 transition-colors text-center rounded-full animate-bounce"
+            className="w-10 h-10 hover:text-grey-800   bg-gradient-to-r from-white via-gray-200 to-blue-200 transition-colors text-center rounded-full animate-bounce"
           > 
           <svg className="w-6 h-6 text-indigo-800  hover:text-purple-800 dark:text-pink mx-2 my-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 14">
             <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 1v12m0 0 4-4m-4 4L1 9"/>

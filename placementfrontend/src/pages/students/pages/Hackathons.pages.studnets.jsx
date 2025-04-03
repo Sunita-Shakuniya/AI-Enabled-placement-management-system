@@ -15,7 +15,7 @@ function Hackathons({limit}) {
     }, []);
     const displayhackathon = limit ? hackathons.slice(0, limit) : hackathons;
   return (
-    <section className=' bg-gradient-to-b from-yellow-200 to-yellow-100 p-4 '>
+    <section className='  p-4 '>
         <div className=" flex justify-center w-full mt-8 ">
           <img src={hackathonImg} alt="Search" className=" w-1/3  opacity-" />
         </div>   

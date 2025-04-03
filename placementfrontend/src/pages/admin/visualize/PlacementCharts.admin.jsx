@@ -10,7 +10,7 @@ const PlacementCharts = () => {
       height: 350, // Chart height
     },
     labels: ['36h', '56h', '16h', '32h', '56h', '16h'], // Labels for each slice
-    colors: ['#22A95E', '#24B364', '#56CA00', '#53D28C', '#7EDDA9', '#A9E9C5'], // Custom colors
+    colors: ['#A5B4FC', '#6366F1', '#C4B5FD', '#8B5CF6', '#1E40AF' ,  '#3B82F6',], // Custom colors
     responsive: [
       {
         breakpoint: 480, // Breakpoint for small screens
@@ -47,7 +47,7 @@ const PlacementCharts = () => {
     xaxis: {
       categories: ['Computer Science', 'Mechanical', 'Electrical', 'Civil'], // Departments
     },
-    colors: ['#22A95E', '#FF4500'], // Green for placed, Red for unplaced
+    colors: ['#4F46E5', '#7C3AED'], // Green for placed, Red for unplaced
     plotOptions: {
       bar: {
         horizontal: false, // Vertical bars
@@ -85,7 +85,7 @@ const PlacementCharts = () => {
     xaxis: {
       categories: ['January', 'February', 'March', 'April', 'May', 'June'], // Months
     },
-    colors: ['#22A95E', '#FF4500', '#1E90FF', '#FFD700'], // Custom colors for each department
+    colors: ['#4F46E5', '#7C3AED', '#8B5CF6', '#6366F1', '#818CF8'], // Custom colors for each department
     stroke: {
       width: 1, // Line thickness
       //dashArray: [5, 5], // Make the stroke dotted (5px dash, 5px gap)
@@ -101,108 +101,125 @@ const PlacementCharts = () => {
     },
   };
 
-  // Sample Data
-  const sampleData = [
-    { name: 'John Doe', department: 'Computer Science', package: 12 },
-    { name: 'Jane Smith', department: 'Mechanical', package: 8 },
-    { name: 'Alice Johnson', department: 'Electrical', package: 9 },
-    { name: 'Bob Brown', department: 'Civil', package: 7 },
-    { name: 'Charlie Davis', department: 'Computer Science', package: 10 },
-    { name: 'Eva Green', department: 'Mechanical', package: 11 },
-    { name: 'Frank White', department: 'Electrical', package: 6 },
-    { name: 'Grace Black', department: 'Civil', package: 8 },
-    { name: 'Henry Blue', department: 'Computer Science', package: 13 },
-    { name: 'Ivy Yellow', department: 'Mechanical', package: 9 },
-  ];
-
-  // Process the Sample Data
-  const processData = (data) => {
-    const packageRanges = [
-      { range: '5-10 LPA', min: 5, max: 10 },
-      { range: '10-15 LPA', min: 10, max: 15 },
+    // Static sample data - each point represents a student's package
+    const staticData = [
+      { department: 'Computer Science', package: 7.2 },
+      { department: 'Computer Science', package: 8.5 },
+      { department: 'Computer Science', package: 12.1 },
+      { department: 'Computer Science', package: 9.3 },
+      { department: 'Computer Science', package: 16.8 },
+      { department: 'Mechanical', package: 6.5 },
+      { department: 'Mechanical', package: 7.8 },
+      { department: 'Mechanical', package: 11.2 },
+      { department: 'Electrical', package: 7.5 },
+      { department: 'Electrical', package: 15.4 },
+      { department: 'Civil', package: 6.2 },
+      { department: 'Civil', package: 8.9 },
     ];
-
-    const departments = ['Computer Science', 'Mechanical', 'Electrical', 'Civil'];
-
-    // Initialize the processed data
-    const processedData = [];
-
-    packageRanges.forEach(({ range, min, max }) => {
-      departments.forEach((department) => {
-        const count = data.filter(
-          (student) =>
-            student.department === department &&
-            student.package >= min &&
-            student.package < max
-        ).length;
-
-     
-          processedData.push({
-            x: range,
-            y: department,
-            z: count, // Number of students in this range
-          });
-        
-      });
-    });
-
-    return processedData;
-  };
-
-const processedData = processData(sampleData);
-console.log('Processed Data:', processedData);
-  // Bubble Chart Configuration
-  const bubbleOptions = {
-    series: [
+  
+    // Process data for scatter plot
+    const seriesData = [
       {
-        name: 'Package Data',
-        data: processedData, // Use the processed data
+        name: 'Computer Science',
+        data: staticData
+          .filter(item => item.department === 'Computer Science')
+          .map(item => item.package)
       },
-    ],
-    chart: {
-      type: 'bubble',
-      height: 350,
-    },
-    xaxis: {
-      type: 'category', // X-axis represents categories (package ranges)
-      categories: ['5-10 LPA', '10-15 LPA'], // Package ranges
-    },
-    yaxis: {
-      type: 'numeric', // Y-axis represents categories (departments)
-      categories: ['Computer Science', 'Mechanical', 'Electrical', 'Civil'], // Departments
-    },
-    colors: ['#22A95E', '#FF4500', '#1E90FF', '#FFD700'], // Custom colors for bubbles
-    dataLabels: {
-      enabled: true, // Show data labels on bubbles
-      formatter: function (val) {
-        return val.z; // Display number of students
+      {
+        name: 'Mechanical',
+        data: staticData
+          .filter(item => item.department === 'Mechanical')
+          .map(item => item.package)
       },
-    },
-    legend: {
-      position: 'top', // Position the legend at the top
-    },
-    tooltip: {
-      enabled: true, // Enable tooltips
-      custom: function ({ seriesIndex, dataPointIndex, w }) {
-        const data = w.globals.series[seriesIndex].data[dataPointIndex];
-        return (
-          `<div class="apexcharts-tooltip-custom">
-            <strong>${data.y}</strong><br>
-            Package Range: ${data.x}<br>
-            Students: ${data.z}
-          </div>`
-        );
+      {
+        name: 'Electrical',
+        data: staticData
+          .filter(item => item.department === 'Electrical')
+          .map(item => item.package)
       },
-    },
-  };
+      {
+        name: 'Civil',
+        data: staticData
+          .filter(item => item.department === 'Civil')
+          .map(item => item.package)
+      }
+    ];
+  
+    // Scatter plot configuration
+    const scatterOptions = {
+      chart: {
+        type: 'scatter',
+        height: 500,
+        zoom: {
+          enabled: true,
+          type: 'xy'
+        },
+        toolbar: {
+          show: true
+        }
+      },
+      xaxis: {
+        tickAmount: 10,
+        title: {
+          text: 'Students',
+          style: {
+            fontSize: '14px',
+            fontWeight: 'bold'
+          }
+        },
+        labels: {
+          formatter: function(val) {
+            return parseInt(val) + 1; // Display student index
+          }
+        }
+      },
+      yaxis: {
+        title: {
+          text: 'Package (LPA)',
+          style: {
+            fontSize: '14px',
+            fontWeight: 'bold'
+          }
+        },
+        min: 5,
+        max: 20
+      },
+      colors: ['#4F46E5', '#7C3AED', '#8B5CF6', '#6366F1', '#818CF8'],
+      legend: {
+        position: 'top',
+        horizontalAlign: 'center'
+      },
+      tooltip: {
+        custom: function({ seriesIndex, dataPointIndex, w }) {
+          const department = w.globals.seriesNames[seriesIndex];
+          const packageValue = w.globals.series[seriesIndex][dataPointIndex];
+          return `
+            <div class="bg-white p-3 rounded-lg shadow-lg border border-gray-200">
+              <div class="font-bold text-gray-800">${department}</div>
+              <div class="text-sm text-gray-600">Package: ${packageValue} LPA</div>
+              <div class="text-sm text-gray-600">Student #${dataPointIndex + 1}</div>
+            </div>
+          `;
+        }
+      },
+      markers: {
+        size: 8,
+        strokeWidth: 0,
+        hover: {
+          size: 10
+        }
+      }
+    };
+  
+
 
 
   return (
     <div className="container px-5 mx-auto mb-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 text-center pl-10 pr-10">
         {/* Donut Chart Card */}
-        <div className="border-2 hover:shadow-blue-100 shadow-[inset_0_0_10px_rgba(0,0,0,0.15)] bg-white-100 px-4 py-3 rounded-xl border border-gray-300" style={{ color: 'rgb(4, 33, 89)' }}>
-          <div className="w-full h-48 mb-3">
+        <div className="border-2 hover:shadow-blue-100 shadow-[inset_0_0_10px_rgba(0,0,0,0.15)] bg-white-100 px-4 py-3 rounded-xl border border-gray-300 " style={{ color: 'rgb(4, 33, 89)' }}>
+          <div className="w-full h-[200px] mb-3">
             <Chart
               options={donutOptions}
               series={donutOptions.series}
@@ -216,7 +233,7 @@ console.log('Processed Data:', processedData);
 
         {/* Bar Chart Card */}
         <div className="border-2 hover:shadow-blue-100 shadow-[inset_0_0_10px_rgba(0,0,0,0.15)] bg-white-100 px-4 py-3 rounded-xl border border-gray-300" style={{ color: 'rgb(4, 33, 89)' }}>
-          <div className="w-full h-48 mb-3">
+          <div className="w-full h-[200px] mb-3">
             <Chart
               options={barOptions}
               series={barOptions.series}
@@ -228,7 +245,7 @@ console.log('Processed Data:', processedData);
         </div>
         {/* Line Chart Card */}
         <div className="border-2 hover:shadow-blue-100 shadow-[inset_0_0_10px_rgba(0,0,0,0.15)] bg-white-100 px-4 py-3 rounded-xl border border-gray-300" style={{ color: 'rgb(4, 33, 89)' }}>
-          <div className="w-full h-96 mb-3"> {/* Adjust height as needed */}
+          <div className="w-full h-[200px] mb-3"> {/* Adjust height as needed */}
             <Chart
               options={lineOptions}
               series={lineOptions.series}
@@ -240,15 +257,16 @@ console.log('Processed Data:', processedData);
         </div>
         {/* Bubble Chart Card */}
         <div className="border-2 hover:shadow-blue-100 shadow-[inset_0_0_10px_rgba(0,0,0,0.15)] bg-white-100 px-4 py-3 rounded-xl border border-gray-300" style={{ color: 'rgb(4, 33, 89)' }}>
-          <div className="w-full h-96 mb-3"> {/* Adjust height as needed */}
+          <h2 className="text-xl font-bold mb-4 text-gray-800">Student Placement Packages</h2>
+          <div className="w-full h-[200px]">
             <Chart
-              options={bubbleOptions}
-              series={bubbleOptions.series}
-              type="bubble"
+              options={scatterOptions}
+              series={seriesData}
+              type="scatter"
               height="100%"
+              width="100%"
             />
           </div>
-          <p className="font-bold" style={{ color: 'rgb(4, 33, 89)' }}>Department-wise Package Range</p>
         </div>
       </div>
     </div>

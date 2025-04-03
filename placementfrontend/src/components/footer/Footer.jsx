@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 export default function Footer() {
     return (
-        <footer className="text-gray-600 body-font bg-gray-300" style={{ backgroundColor: '#042159' }}>
+        <footer className="text-gray-600 body-font bg-gray-300 bg-indigo-800" >
             <div className="container px-5 py-24 mx-auto">
                 <div className="flex flex-wrap md:text-left text-center order-first">
                     {/* Categories Section */}

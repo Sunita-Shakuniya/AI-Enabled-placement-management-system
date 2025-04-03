@@ -1,17 +1,18 @@
 import pool from "../config/database.js";
 
 // Get all students
-export const getcompanies = async (req, res) => {
+export const getpublisheddrive = async (req, res) => {
     try {
-        const [companies] = await pool.query("SELECT * FROM companies");
-        res.json(companies);
+        const [offers] = await pool.query("SELECT * FROM published_drives");
+        res.json(offers);
     } catch (error) {
-        res.status(500).json({ error: "Database error while fetching companies detail at initial " });
+        res.status(500).json({ error: "Database error while fetching published_drives " });
     }
 };
 
+
 // Add a company
-export const addCompany = async (req, res) => {
+export const adddrive = async (req, res) => {
     const { company_name, website, contact_email } = req.body;
     try {
         await pool.query(
@@ -24,6 +25,3 @@ export const addCompany = async (req, res) => {
         res.status(500).json({ error: "Error adding company" });
     }
 };
-
-
-

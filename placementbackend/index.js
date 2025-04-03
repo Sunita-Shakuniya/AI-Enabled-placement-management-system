@@ -14,6 +14,8 @@ import hackathonsRoutes from './src/routes/hackathons.routes.js';
 const app = express()
 const port = process.env.PORT || 3000; // ✅ Use environment variable or default port
 
+app.use(express.static('dist'));
+
 app.use(express.json()); // Middleware to parse JSON
 app.use("/api/students", studentRoutes);
 app.use("/api/offers", offersRoutes);

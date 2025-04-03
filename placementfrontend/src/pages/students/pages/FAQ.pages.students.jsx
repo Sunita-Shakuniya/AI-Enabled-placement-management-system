@@ -12,22 +12,22 @@ const FAQSection = () => {
 
   const faqs = [
     {
-      question: "What is Flowbite?",
+      question: "How do I register on the platform?",
       answer:
-        "Flowbite is an open-source library of interactive components built on top of Tailwind CSS including buttons, dropdowns, modals, navbars, and more.",
-      link: "/docs/getting-started/introduction/",
+        "Click Sign Up as a Student, fill in your academic details, and verify your email via the link sent to your inbox.",
+      link: "#",
     },
     {
-      question: "Is there a Figma file available?",
+      question: "Where can I find internships/courses?",
       answer:
-        "Flowbite is first conceptualized and designed using the Figma software so everything you see in the library has a design equivalent in our Figma file.",
-      link: "https://flowbite.com/figma/",
+        "Check the Resources tab for curated links to platforms like Coursera, GFG, and Udemy.",
+      link: "#",
     },
     {
-      question: "What are the differences between Flowbite and Tailwind UI?",
+      question: "How do we shortlist candidates?",
       answer:
-        "The main difference is that the core components from Flowbite are open source under the MIT license, whereas Tailwind UI is a paid product. Another difference is that Flowbite relies on smaller and standalone components, whereas Tailwind UI offers sections of pages.",
-      link: "https://flowbite.com/pro/",
+        "Access the Drive Management tab to view registered student profiles, filter by skills/CGPA, and download applicant data.",
+      link: "#",
     },
   ];
 

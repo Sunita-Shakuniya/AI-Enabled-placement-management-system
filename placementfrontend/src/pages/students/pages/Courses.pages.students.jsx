@@ -15,7 +15,7 @@ function Courses({limit}) {
       }, []);
       const displayCourses = limit ? courses.slice(0, limit) : courses;
   return (
-    <section className=' bg-gradient-to-b from-gray-100 via-white to-white p-4 '>
+    <section className='  p-4 '>
         <div className='flex flex-row items-center justify-center gap-4'>
           <img src={coursesImg} alt="Search" className="w-[300px]" />
           <h1 className="text-5xl font-extrabold text-center 

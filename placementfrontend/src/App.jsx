@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
 import About from "./pages/about_us/About";
-//import Resourses from "./pages/resourses/Resourses";
 import AdminDashboard from "./pages/admin/Dashboard.admin";
 import AdminCompanies from "./pages/admin/Companies.admin";
 import Drives from "./pages/admin/companyPages/Drives.admin.pages";
@@ -9,8 +8,6 @@ import Offers from "./pages/admin/companyPages/Offers.admin.pages";
 import Companies from "./pages/admin/companyPages/Companies.admin.pages";
 import NewCompanies from "./pages/admin/companyPages/NewCompanies.admin.pages";
 import TopCompanies from "./pages/admin/companyPages/TopCompanies.admin.pages";
-import Recruiters from "./pages/recruiters/Recruiters";
-import SuccessForm from "./pages/recruiters/SuccessForm.recruiters";
 import CompanyInfo from "./pages/admin/companyPages/NewCompanyInfo.admin.pages";
 import Opportunities from "./pages/students/Opportunities";
 import Result from "./pages/students/pages/Result.pages.students";
@@ -21,7 +18,12 @@ import Resourcelearning from "./pages/admin/resourcePages/Resource.resourcePages
 import AddCompanyForm from "./pages/admin/add/AddCompany.add.admin";
 import AddStudentForm from "./pages/admin/add/AddStudent.add.admin";
 import HackathonsResource from "./pages/admin/resourcePages/Hackthons.resourcePages.admin";
-import ConducrDrive from "./pages/recruiters/ConducrDrive";
+import ConducrDrive from "./pages/recruiters/pages/ConducrDrive";
+import SuccessForm from "./pages/recruiters/pages/SuccessForm.pages.recruiters";
+import RecruiterAnalysis from "./pages/recruiters/pages/RecruiterAnalysis.pages.recruiters.jsx";
+import RecruitersStudentData from "./pages/recruiters/pages/RecruitersStudentData.pages.recruiters";
+import RecruitersHome from "./pages/recruiters/pages/RecruitersHome.pages.recruiters";
+import RecruiterTool from "./pages/recruiters/pages/RecruiterTool.pages.recruiters";
 
 
 function App() {
@@ -34,10 +36,12 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/opportunities" element={<Opportunities />} />
         <Route path="/opportunities/result" element={<Result />} />
-        {/** <Route path="/opportunities/resouses" element={<Resourses />} />*/}
-        <Route path="/recruiters" element={<Recruiters/>} />
-        <Route path="/recruiters/form" element={<ConducrDrive/>} />
+        <Route path="/recruiters" element={<RecruitersHome/>} />
+        <Route path="/recruiters/drive" element={<ConducrDrive/>} />
         <Route path="/recruiters/success" element={<SuccessForm/>} />
+        <Route path="/recruiters/analysis" element={<RecruiterAnalysis/>} />
+        <Route path="/recruiters/allstudent-detail" element={<RecruitersStudentData/>} />
+        <Route path="/recruiters/tool" element={<RecruiterTool/>} />
         <Route path="/admin/companies/drives" element={<Drives/>} />
         <Route path="/admin/companies/offers" element={<Offers/>} />
         <Route path="/admin/companies/all" element={<Companies/>} />

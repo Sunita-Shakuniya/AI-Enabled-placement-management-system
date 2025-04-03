@@ -15,7 +15,7 @@ function HackathonsResource() {
     <div>
       <Navbar/>
       <section className="bg-blue-200 p-4">
-        <h1 className="text-2xl font-bold text-center my-4">Hackthons Platforms</h1>
+        <h1 className="text-2xl font-bold text-center my-4">Hackathons Platforms</h1>
         <div className="overflow-x-auto">
           <table className="min-w-full bg-white rounded-lg shadow-md overflow-hidden">
             {/* Table Header */}

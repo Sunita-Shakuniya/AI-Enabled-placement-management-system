@@ -15,7 +15,7 @@ function AdminDashboard() {
   const [sortConfig, setSortConfig] = useState({ key: null, direction: 'ascending' });
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1); // Ensure this is a number
-  const [itemsPerPage] = useState(10); // Ensure this is a number
+  const [itemsPerPage] = useState(5); // Ensure this is a number
 
   useEffect(() => {
     const handleResize = () => {
@@ -50,11 +50,20 @@ function AdminDashboard() {
   });
 
   // Searching function
-  const filteredStudents = sortedStudents.filter(student =>
-    Object.values(student).some(value =>
-      value.toString().toLowerCase().includes(searchTerm.toLowerCase())
-    )
-  );
+  const filteredStudents = sortedStudents.filter(student => {
+    if (!student) return false; // Skip if student is null/undefined
+    
+    return Object.values(student).some(value => {
+      if (value == null) return false; // Skip null/undefined values
+      
+      try {
+        return value.toString().toLowerCase().includes(searchTerm.toLowerCase());
+      } catch (e) {
+        console.warn('Failed to process value:', value, e);
+        return false;
+      }
+    });
+  });
 
   // Pagination
   const indexOfLastItem = currentPage * itemsPerPage; // Ensure both are numbers
@@ -151,7 +160,7 @@ function AdminDashboard() {
             <table className="min-w-full bg-white rounded-lg shadow-md overflow-hidden">
               <thead>
                 <tr className="bg-gradient-to-r from-blue-500 to-purple-600 text-white">
-                <th className="px-6 py-3 text-left text-sm font-semibold cursor-pointer" onClick={() => handleSort('student_id')}>Student ID</th>
+                  <th className="px-6 py-3 text-left text-sm font-semibold cursor-pointer" onClick={() => handleSort('student_id')}>Student ID</th>
                   <th className="px-6 py-3 text-left text-sm font-semibold cursor-pointer" onClick={() => handleSort('first_name')}>Name</th>
                   <th className="px-6 py-3 text-left text-sm font-semibold cursor-pointer" onClick={() => handleSort('email')}>Email</th>
                   <th className="px-6 py-3 text-left text-sm font-semibold cursor-pointer" onClick={() => handleSort('phone')}>Phone</th>
@@ -162,9 +171,9 @@ function AdminDashboard() {
                   <th className="px-6 py-3 text-left text-sm font-semibold">Actions</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody className='divide-y divide-gray-200'>
                 {currentItems.map((student) => (
-                  <tr key={student.student_id} className="divide-y divide-gray-200">
+                  <tr key={student.student_id} className="hover:bg-gray-50 transition-colors">
                     <td className="px-6 py-2"><p className="text-sm text-gray-600"></p>{student.student_id}</td>
                     <td className="px-6 py-2"><h4 className="text-sm font-semibold text-gray-900"></h4>{student.first_name} {student.last_name}</td>
                     <td className="px-6 py-2"><p className="text-sm text-gray-600"></p>{student.email}</td>
@@ -176,14 +185,14 @@ function AdminDashboard() {
                     <td className="flex px-6 py-2 gap-x-2">
                       <button
                         onClick={() => window.location.href = `/studentinfo/${student.id}`}
-                        className="flex text-black bg-blue-600 hover:bg-blue-700 rounded-lg font-small rounded-full space-x-1 text-sm px-2 py-2 text-center mb-2"
+                        className="px-4 m-2  flex items-center justify-center text-black bg-blue-600 hover:bg-blue-700 rounded-lg font-small rounded-full space-x-1 text-sm px-2 py-2 text-center mb-2"
                       >
-                        <img src={viewIcon} alt="icon" className="w-4 h-4" /> {/* Adjust size */}
+                        <img src={viewIcon} alt="icon" className="w-4 h-4 p-2" /> {/* Adjust size */}
                         <span>view</span> 
                       </button>
                       <button
                         onClick={() => window.location.href = `/studentinfo/${student.id}`}
-                        className="flex text-black bg-pink-700 hover:bg-blue-700 rounded-lg font-small rounded-full space-x-1 text-sm px-2 py-2 text-center mb-2"
+                        className="px-4 m-2  flex items-center justify-center flex text-black bg-pink-700 hover:bg-blue-700 rounded-lg font-small rounded-full space-x-1 text-sm px-2 py-2 text-center mb-2"
                       >
                         <img src={editIcon} alt="icon" className="w-4 h-4" /> {/* Adjust size */}
                         <span>edit</span> 

@@ -6,7 +6,6 @@ import loginImg from './elements/Work_7.png';
 import Courses from './pages/Courses.pages.students';
 import Internship from './pages/Internship.pages.students';
 import Resources from './pages/Resources.pages.students';
-import Hackthons from './pages/Hackathons.pages.studnets';
 import FAQSection from './pages/FAQ.pages.students';
 import scrollToSection from './function';
 import result from './elements/result.png';
@@ -46,7 +45,7 @@ function Opportunities() {
     
       <Card  onClick={(e) => {
         e.stopPropagation(); // Prevent default behavior
-        scrollToSection('courses');}} className="max-w-sm bg-gradient-to-r from-indigo-800 via-indigo-700 via-indigo-800 to-blue-700">
+        scrollToSection('courses');}} className="max-w-sm  bg-gradient-to-r from-indigo-800 via-indigo-700 via-indigo-800 to-blue-700">
         <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
           Courses
         </h5>
@@ -55,14 +54,14 @@ function Opportunities() {
           <span className='font-bold'> Google, Amazon, Infosys, </span> etc and platforms like 
           <span className='font-bold'> Coursera, Udemy.</span>
           <br />
-          <span className='dark:text-yellow-900 font-bold' >Learn Now!</span>
+          <span className='dark:text-yellow-300 font-bold' >Learn Now!</span>
         </p>
       </Card>
       <Card onClick={(e) => {
         e.stopPropagation(); // Prevent default behavior
-        scrollToSection('hackthons');}} className="max-w-sm bg-gradient-to-r from-indigo-800 via-indigo-600 via-indigo-800 to-blue-800">
+        scrollToSection('hackathons');}} className="max-w-sm bg-gradient-to-r from-indigo-800 via-indigo-600 via-indigo-800 to-blue-800">
         <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-          Hackthons
+          Hackathons
         </h5>
         <p className="font-normal text-gray-700 dark:text-gray-400">
         Hackathons turn learning into action. Explore top platforms hosting events—from 
@@ -177,7 +176,7 @@ function Opportunities() {
     
     <section id='courses' className='border-t border-gray-200'><Courses limit={4} /></section>
     <section id='resources' className='border-t border-gray-200'><Resources limit={4} /></section>
-    <section id='hackthons' className='border-t border-gray-200'><Hackathons limit={4}/></section>
+    <section id='hackathons' className='border-t border-gray-200'><Hackathons limit={4}/></section>
     <section id='faq' className='border-t border-gray-200'><FAQSection  limit={4}/> </section>
     </Layout> 
   )

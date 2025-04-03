@@ -1,9 +1,8 @@
 import React from 'react'
-import Layout from '../../components/layout/Layout'
-import RecruiterForm from './RecruiterForm'
-import coursesImg from './elements/hireImg.png';
+import Layout from '../../../components/layout/Layout'
+import coursesImg from '../elements/hireImg.png';
 
-function Recruiters() {
+function RecruitersHome() {
 
   return (
     <div>
@@ -17,7 +16,7 @@ function Recruiters() {
         />
         <div className="text-center mb-8 lg:mb-16">
           <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-            Discover Top Talent from <span className="text-blue-600">[Your College Name]</span>
+            Discover Top Talent from <span className="text-indigo-800">Sandhya Engineering College</span>
           </h1>
           <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
             Our placement portal gives you direct access to skilled students ready for internships and full-time roles.
@@ -26,34 +25,34 @@ function Recruiters() {
           <div className="text-center mt-4 pt-2">
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-6">
             <a 
-              href="/recruiters/form" 
-              className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 sm:py-3 px-4 sm:px-6 rounded-lg shadow-md transition duration-150 text-center"
+              href="/recruiters/drive" 
+              className="bg-gradient-to-r from-indigo-600 to-indigo-700 hover:bg-blue-700 text-white font-medium py-2 sm:py-3 px-4 sm:px-6 rounded-lg shadow-md transition duration-150 text-center"
             >
               Post a New Drive
             </a>
-              <button className="bg-white hover:bg-gray-50 text-gray-700 font-medium py-2 sm:py-3 px-4 sm:px-6 rounded-lg border border-gray-300 shadow-sm transition duration-150">
+              <a href='/recruiters/allstudent-detail' className="bg-white hover:bg-gray-50 text-gray-700 font-medium py-2 sm:py-3 px-4 sm:px-6 rounded-lg border border-gray-300 shadow-sm transition duration-150">
                 Browse Student Database →
-              </button>
+              </a>
             </div>
             <p className="text-gray-500 text-xs sm:text-sm">
-              Average response time: <span className="font-medium">Under 24 hours</span> from our placement cell
+              Average response time: <span className="font-medium text-gray-700">Under 24 hours</span> from our placement cell
             </p>
           </div>
         </div>                        
       </div>
           {/* Stats Panel */}
-          <div className="bg-gray-50 rounded-xl p-6 mb-12">
+          <div className="bg-gray-100 border rounded-xl p-6 mb-12">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
               <div>
-                <p className="text-3xl font-bold text-blue-600 mb-2">85%</p>
-                <p className="text-gray-600">Placement Rate (2023)</p>
+                <p className="text-3xl font-bold text-blue-800 mb-2">85%</p>
+                <p className="text-gray-600">Placement Rate (2025)</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-green-600 mb-2">200+</p>
+                <p className="text-3xl font-bold text-green-700 mb-2">200+</p>
                 <p className="text-gray-600">Pre-screened Candidates</p>
               </div>
               <div>
-                <p className="text-3xl font-bold text-purple-600 mb-2">4.8/5</p>
+                <p className="text-3xl font-bold text-purple-700 mb-2">4.8/5</p>
                 <p className="text-gray-600">Recruiter Satisfaction</p>
               </div>
             </div>
@@ -70,7 +69,7 @@ function Recruiters() {
                 {/* Shortlisting Section */}
                 <div className="border-r border-gray-200 pr-4">
                   <h3 className="text-lg font-medium text-gray-700 mb-3">Candidate Shortlisting</h3>
-                  <ul className="space-y-2">
+                  <ul className="space-y-2 pb-4">
                     <li className="flex items-center">
                       <span className="bg-blue-100 text-blue-800 p-1 rounded-full mr-2">✓</span>
                       Filter by CGPA/Skills
@@ -84,15 +83,15 @@ function Recruiters() {
                       Export to Excel
                     </li>
                   </ul>
-                  <button className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+                  <a href='/recruiters/tool' className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
                     Manage Shortlist
-                  </button>
+                  </a>
                 </div>
 
                 {/* List Management Section */}
                 <div className="border-r border-gray-200 pr-4">
                   <h3 className="text-lg font-medium text-gray-700 mb-3">List Management</h3>
-                  <ul className="space-y-2">
+                  <ul className="space-y-2 pb-4">
                     <li className="flex items-center">
                       <span className="bg-green-100 text-green-800 p-1 rounded-full mr-2">↻</span>
                       Real-time updates
@@ -106,15 +105,15 @@ function Recruiters() {
                       Track selection progress
                     </li>
                   </ul>
-                  <button className="mt-4 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                  <a href='/recruiters/tool' className="mt-4 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition">
                     Update Lists
-                  </button>
+                  </a>
                 </div>
 
                 {/* New Candidate Evaluation Section */}
                 <div>
                   <h3 className="text-lg font-medium text-gray-700 mb-3">Candidate Evaluation</h3>
-                  <ul className="space-y-2">
+                  <ul className="space-y-2 pb-4">
                     <li className="flex items-center">
                       <span className="bg-purple-100 text-purple-800 p-1 rounded-full mr-2">🛠️</span>
                       Skills analysis
@@ -128,9 +127,9 @@ function Recruiters() {
                       Project portfolio
                     </li>
                   </ul>
-                  <button className="mt-4 bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition">
+                  <a href='/recruiters/tool' className="mt-4  bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition">
                     Evaluate Candidates
-                  </button>
+                  </a>
                 </div>
                 </div>
               </div>
@@ -207,12 +206,12 @@ function Recruiters() {
                 </ul>
                 </div>
                 {/* Button */}
-                <button 
-                  type="submit"
-                  className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-3 rounded-lg hover:from-purple-700 hover:to-blue-700 transition shadow-md flex items-center justify-center"
+                <a 
+                  href='/recruiters/analysis'
+                  className="w-full bg-gradient-to-r from-indigo-600 to-indigo-700  text-white px-4 py-3 rounded-lg hover:from-purple-700 hover:to-blue-700 transition shadow-md flex items-center justify-center"
                 >
                   Analyze Now
-                </button>
+                </a>
               </div>
 
               {/*-----> Second Row - Second column Create New Drive Card */}
@@ -272,8 +271,8 @@ function Recruiters() {
 
                 {/* CTA Button */}
                 <a
-                  href="/recruiters/form" 
-                  className="w-full bg-gradient-to-r from-purple-600 to-blue-600 text-white px-4 py-3 rounded-lg hover:from-purple-700 hover:to-blue-700 transition shadow-md flex items-center justify-center"
+                  href="/recruiters/drive" 
+                  className="w-full bg-gradient-to-r from-indigo-600 to-indigo-700  text-white px-4 py-3 rounded-lg hover:from-purple-700 hover:to-blue-700 transition shadow-md flex items-center justify-center"
                 >
                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
@@ -304,4 +303,4 @@ function Recruiters() {
   )
 }
 
-export default Recruiters
+export default RecruitersHome
