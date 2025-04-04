@@ -8,25 +8,23 @@ function Internship({id, limit}) {
   const [platforms, setPlatforms] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
   useEffect(() => {
     async function getData() {
       try {
-      // Ensure data is an array before setting it
-      if (Array.isArray(data)) {
-        setPlatforms(data);
-      } else {
-        setPlatforms([]); // Set to empty array if data is not array
-        console.error('Expected array but got:', data);
+        setLoading(true);
+        const data = await fetchinternships();
+        setPlatforms(Array.isArray(data) ? data : []); // Fixed typo here
+      } catch (err) {
+        console.error("Error fetching internships:", err);
+        setError("Failed to load internships. Please try again.");
+        setPlatforms([]);
+      } finally {
+        setLoading(false);
       }
-    } catch (err) {
-      setError(err.message);
-      setPlatforms([]);
-    } finally {
-      setLoading(false);
     }
-  }
-  getData();
-}, []);
+    getData();
+  }, []);
   
   const displayInternships = limit ? platforms.slice(0, limit) : platforms;
   return (
