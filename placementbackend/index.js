@@ -15,7 +15,7 @@ import hackathonsRoutes from './src/routes/hackathons.routes.js';
 const app = express()
 const port = process.env.PORT || 3000; // ✅ Use environment variable or default port
 
-//app.use(express.static('dist'));
+app.use(express.static('dist'));
 // CORS Configuration (Add this before your routes)
 const corsOptions = {
   origin: [
