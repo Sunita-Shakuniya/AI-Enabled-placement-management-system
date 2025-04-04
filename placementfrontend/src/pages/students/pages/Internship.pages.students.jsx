@@ -6,13 +6,28 @@ import internshipImg from '../elements/internship.png';
 function Internship({id, limit}) {
   const navigate = useNavigate();
   const [platforms, setPlatforms] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   useEffect(() => {
     async function getData() {
-      const data = await fetchinternships();
-      setPlatforms(data);
+      try {
+      // Ensure data is an array before setting it
+      if (Array.isArray(data)) {
+        setPlatforms(data);
+      } else {
+        setPlatforms([]); // Set to empty array if data is not array
+        console.error('Expected array but got:', data);
+      }
+    } catch (err) {
+      setError(err.message);
+      setPlatforms([]);
+    } finally {
+      setLoading(false);
     }
-    getData();
-  }, []);
+  }
+  getData();
+}, []);
+  
   const displayInternships = limit ? platforms.slice(0, limit) : platforms;
   return (
     <section className=' p-4 '>

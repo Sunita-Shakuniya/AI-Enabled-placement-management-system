@@ -17,6 +17,7 @@ function Opportunities() {
     <Layout>
     <section className='p-8 min-h-screen flex flex-col'>
     {/**Admin Section**/}
+    
     < div className="grid grid-cols-1  sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-2 flex-grow  ">
       <div className="   hidden lg:block sm:w-3/4">
         

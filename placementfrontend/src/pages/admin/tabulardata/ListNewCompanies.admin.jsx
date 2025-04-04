@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import viewIcon from '../elements/view_icon.png';
 import addIcon from '../../../components/elements/addicon.png';
 import axios from 'axios';
-
+const baseURL = import.meta.env.VITE_API_URL;
 function ListNewCompanies() {
     const [companies, setCompanies] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -21,7 +21,7 @@ function ListNewCompanies() {
                 const companiesData = await fetchNewCompanies();
                 setCompanies(companiesData);
                 // Fetch existing companies
-                const response = await axios.get("/api/companies");
+                const response = await axios.get(`${baseURL}/api/companies`);
                 setExistingCompanies(response.data.map((company) => company.company_name));
                 setLoading(false);
             } catch (error) {
@@ -35,7 +35,7 @@ function ListNewCompanies() {
     }, []);
     const handleMoveToCompanies = async (id) => {
         try {
-            const response = await axios.post(`/api/recruiter-forms/${id}/move-to-companies`);
+            const response = await axios.post(`${baseURL}/api/recruiter-forms/${id}/move-to-companies`);
             console.log("Data moved to companies:", response.data);
             // Add the company name to the list of existing companies
             setExistingCompanies((prev) => [...prev, organizationName]);

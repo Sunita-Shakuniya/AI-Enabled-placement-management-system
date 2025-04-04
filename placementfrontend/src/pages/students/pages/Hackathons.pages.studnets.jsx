@@ -6,13 +6,30 @@ import hackathonImg from '../elements/hackathon.png';
 function Hackathons({limit}) {
   const navigate = useNavigate();
   const [hackathons, sethackathons] = useState([]);
-    useEffect(() => {
-      async function getData() {
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    async function getData() {
+      try {
+        setLoading(true);
         const data = await fetchHackathons();
-        sethackathons(data);
+        // Ensure data is an array before setting state
+        if (Array.isArray(data)) {
+          sethackathons(data);
+        } else {
+          console.error('Expected array but got:', data);
+          sethackathons([]); // Set to empty array if data is not array
+        }
+      } catch (err) {
+        setError(err.message);
+        sethackathons([]);
+      } finally {
+        setLoading(false);
       }
-      getData();
-    }, []);
+    }
+    getData();
+  }, []);
     const displayhackathon = limit ? hackathons.slice(0, limit) : hackathons;
   return (
     <section className='  p-4 '>

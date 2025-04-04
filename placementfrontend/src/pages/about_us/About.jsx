@@ -1,8 +1,11 @@
 //import Layout from "../../components/layout/Layout";
 
 import Layout from "../../components/layout/Layout";
-
+const baseURL = import.meta.env.VITE_API_URL;
 function About() {
+    console.log(`${baseURL}`)
+    // About.jsx
+console.log('All env vars:', import.meta.env);
     return(
         <Layout>
         <section > 
@@ -11,6 +14,7 @@ function About() {
         </div>   
             <div>  
                 <h1 className="flex justify-center">Wanna Know About us !!</h1>;
+
             </div> 
         </section> 
         </Layout>  

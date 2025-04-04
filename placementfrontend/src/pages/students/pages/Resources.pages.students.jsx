@@ -4,13 +4,23 @@ import { fetchresourses } from '../../../services/resources.services';
 import hackathonImg from '../elements/resources.png';
 function Resources({limit}) {
     const [resources, setresources] = useState([]);
-      useEffect(() => {
-        async function getData() {
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    useEffect(() => {
+      async function getData() {
+        try {
+          setLoading(true);
           const data = await fetchresourses();
-          setresources(data);
+          setresources(Array.isArray(data) ? data : []);
+        } catch (err) {
+          setError("Failed to load resources. Please try again.");
+          setresources([]);
+        } finally {
+          setLoading(false);
         }
-        getData();
-      }, []);
+      }
+      getData();
+    }, []);
       const displayResources = limit ? resources.slice(0, limit) : resources;  
   return (
     <section className=' p-4 '>

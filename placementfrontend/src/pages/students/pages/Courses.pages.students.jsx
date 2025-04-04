@@ -6,13 +6,23 @@ import coursesImg from '../elements/courses.png';
 function Courses({limit}) {
   const navigate = useNavigate();
     const [courses, setcourses] = useState([]);
-      useEffect(() => {
-        async function getData() {
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+    useEffect(() => {
+      async function getData() {
+        try {
+          setLoading(true);
           const data = await fetchcourses();
-          setcourses(data);
+          setcourses(Array.isArray(data) ? data : []);
+        } catch (err) {
+          setError("Failed to load courses. Please try again.");
+          setcourses([]);
+        } finally {
+          setLoading(false);
         }
-        getData();
-      }, []);
+      }
+      getData();
+    }, []);
       const displayCourses = limit ? courses.slice(0, limit) : courses;
   return (
     <section className='  p-4 '>

@@ -1,5 +1,6 @@
 import dotenv from 'dotenv'
 dotenv.config()
+import cors from 'cors'; 
 import express from 'express';
 import studentRoutes from "./src/routes/student.routes.js";
 import offersRoutes from "./src/routes/offers.routes.js";
@@ -15,6 +16,24 @@ const app = express()
 const port = process.env.PORT || 3000; // ✅ Use environment variable or default port
 
 //app.use(express.static('dist'));
+// CORS Configuration (Add this before your routes)
+const corsOptions = {
+  origin: [
+    'http://localhost:5173', // Your Vite frontend
+    'http://127.0.0.1:5173', // Alternative localhost
+    // Add other domains as needed for production
+    'https://ai-enabled-placement-management-system-7zo6.vercel.app'
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+};
+// Enable CORS with options
+app.use(cors(corsOptions));
+
+// Optional: Pre-flight request handling
+app.options('*', cors(corsOptions));
+
 
 app.use(express.json()); // Middleware to parse JSON
 app.use("/api/students", studentRoutes);

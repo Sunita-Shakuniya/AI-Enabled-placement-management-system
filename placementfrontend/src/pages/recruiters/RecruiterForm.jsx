@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from 'axios'
 import { useNavigate } from "react-router-dom";
+const baseURL = import.meta.env.VITE_API_URL;
+
 const RecruiterForm = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
@@ -100,7 +102,7 @@ const RecruiterForm = () => {
     if (validateForm()) {
         try {
             const response = await axios.post(
-                '/api/recruiter-forms/submit',
+                '${baseURL}/api/recruiter-forms/submit',
                 formData
             );
             console.log("Form Data Submitted:", response.data);

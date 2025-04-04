@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom'; // To get the ID from the URL
 import AdminButtons from '../../../components/elements/AdminButtons';
 import Layout from '../../../components/layout/Layout';
-
+const baseURL = import.meta.env.VITE_API_URL;
 function CompanyInfo() {
     const { id } = useParams(); // Get the ID from the URL
     const [company, setCompany] = useState(null);
@@ -13,7 +13,7 @@ function CompanyInfo() {
         // Fetch company details using the ID
         const fetchCompany = async () => {
             try {
-                const response = await fetch(`/api/recruiter-forms/${id}`);
+                const response = await fetch(`${baseURL}/api/recruiter-forms/${id}`);
                 if (!response.ok) {
                     throw new Error('Failed to fetch company details');
                 }
