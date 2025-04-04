@@ -5,7 +5,7 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   server:{
     proxy:{
-      '/api':'http://127.0.0.1:4000/',
+      '/api':'http://127.0.0.1:4000/',//proxy work at development mode not for producation
     },
 
   },

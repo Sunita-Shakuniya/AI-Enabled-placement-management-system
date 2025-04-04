@@ -1,8 +1,10 @@
 import axios from "axios";
 
+const baseURL = import.meta.env.VITE_API_URL;
+
 export const fetchStudents = async () => {
     try {
-        const response = await axios.get("/api/students");
+        const response = await axios.get(`${baseURL}/api/students`);
         return response.data;
     } catch (error) {
         console.error("Error fetching students", error);
@@ -12,7 +14,7 @@ export const fetchStudents = async () => {
 
 export const addStudent = async (studentData) => {
     try {
-        const response = await axios.post("/api/students/add", studentData);
+        const response = await axios.post(`${baseURL}/api/students/add`, studentData);
         return response.data;
     } catch (error) {
         console.error("Error adding student", error);
