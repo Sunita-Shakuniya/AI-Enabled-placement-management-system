@@ -1,6 +1,7 @@
 import React from 'react'
 import Layout from '../../../components/layout/Layout'
 import coursesImg from '../elements/hireImg.png';
+import { Link } from 'react-router-dom';
 
 function RecruitersHome() {
 
@@ -24,15 +25,15 @@ function RecruitersHome() {
           {/* CTA Section */}
           <div className="text-center mt-4 pt-2">
             <div className="flex flex-col sm:flex-row justify-center gap-4 mb-6">
-            <a 
-              href="/recruiters/drive" 
+            <Link 
+              to="/recruiters/drive" 
               className="bg-gradient-to-r from-indigo-600 to-indigo-700 hover:bg-blue-700 text-white font-medium py-2 sm:py-3 px-4 sm:px-6 rounded-lg shadow-md transition duration-150 text-center"
             >
               Post a New Drive
-            </a>
-              <a href='/recruiters/allstudent-detail' className="bg-white hover:bg-gray-50 text-gray-700 font-medium py-2 sm:py-3 px-4 sm:px-6 rounded-lg border border-gray-300 shadow-sm transition duration-150">
+            </Link>
+              <Link to='/recruiters/allstudent-detail' className="bg-white hover:bg-gray-50 text-gray-700 font-medium py-2 sm:py-3 px-4 sm:px-6 rounded-lg border border-gray-300 shadow-sm transition duration-150">
                 Browse Student Database →
-              </a>
+              </Link>
             </div>
             <p className="text-gray-500 text-xs sm:text-sm">
               Average response time: <span className="font-medium text-gray-700">Under 24 hours</span> from our placement cell
@@ -83,9 +84,9 @@ function RecruitersHome() {
                       Export to Excel
                     </li>
                   </ul>
-                  <a href='/recruiters/tool' className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
+                  <Link to='/recruiters/tool' className="mt-4 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
                     Manage Shortlist
-                  </a>
+                  </Link>
                 </div>
 
                 {/* List Management Section */}
@@ -105,9 +106,9 @@ function RecruitersHome() {
                       Track selection progress
                     </li>
                   </ul>
-                  <a href='/recruiters/tool' className="mt-4 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition">
+                  <Link to='/recruiters/tool' className="mt-4 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition">
                     Update Lists
-                  </a>
+                  </Link>
                 </div>
 
                 {/* New Candidate Evaluation Section */}
@@ -127,9 +128,9 @@ function RecruitersHome() {
                       Project portfolio
                     </li>
                   </ul>
-                  <a href='/recruiters/tool' className="mt-4  bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition">
+                  <Link to='/recruiters/tool' className="mt-4  bg-purple-600 text-white px-4 py-2 rounded-lg hover:bg-purple-700 transition">
                     Evaluate Candidates
-                  </a>
+                  </Link>
                 </div>
                 </div>
               </div>
@@ -206,12 +207,12 @@ function RecruitersHome() {
                 </ul>
                 </div>
                 {/* Button */}
-                <a 
-                  href='/recruiters/analysis'
+                <Link 
+                  to='/recruiters/analysis'
                   className="w-full bg-gradient-to-r from-indigo-600 to-indigo-700  text-white px-4 py-3 rounded-lg hover:from-purple-700 hover:to-blue-700 transition shadow-md flex items-center justify-center"
                 >
                   Analyze Now
-                </a>
+                </Link>
               </div>
 
               {/*-----> Second Row - Second column Create New Drive Card */}
@@ -270,15 +271,15 @@ function RecruitersHome() {
                 </div>
 
                 {/* CTA Button */}
-                <a
-                  href="/recruiters/drive" 
+                <Link
+                  to="/recruiters/drive" 
                   className="w-full bg-gradient-to-r from-indigo-600 to-indigo-700  text-white px-4 py-3 rounded-lg hover:from-purple-700 hover:to-blue-700 transition shadow-md flex items-center justify-center"
                 >
                   <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
                   </svg>
                   Hire Now
-                </a>
+                </Link>
               </div>
             </div>
           </div> 

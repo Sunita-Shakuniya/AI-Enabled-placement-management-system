@@ -7,9 +7,10 @@ import viewIcon from './elements/view_icon.png';
 import editIcon from './elements/edit_icon.gif';
 import { fetchStudents } from "../../services/student.service";
 import PlacementCharts from "./visualize/PlacementCharts.admin";
-
+import { useNavigate } from 'react-router-dom';
 
 function AdminDashboard() {
+  const navigate = useNavigate();
   const [isSmallScreen, setIsSmallScreen] = useState(false);
   const [students, setStudents] = useState([]);
   const [sortConfig, setSortConfig] = useState({ key: null, direction: 'ascending' });
@@ -184,14 +185,14 @@ function AdminDashboard() {
                     <td className="px-6 py-2"><h6 className="text-sm font-semibold text-gray-900"></h6>{student.status}</td>
                     <td className="flex px-6 py-2 gap-x-2">
                       <button
-                        onClick={() => window.location.href = `/studentinfo/${student.id}`}
+                        onClick={() => navigate(`/studentinfo/${student.id}`)}
                         className="px-4 m-2  flex items-center justify-center text-black bg-blue-600 hover:bg-blue-700 rounded-lg font-small rounded-full space-x-1 text-sm px-2 py-2 text-center mb-2"
                       >
                         <img src={viewIcon} alt="icon" className="w-4 h-4 p-2" /> {/* Adjust size */}
                         <span>view</span> 
                       </button>
                       <button
-                        onClick={() => window.location.href = `/studentinfo/${student.id}`}
+                        onClick={() => navigate(`/studentinfo/${student.id}`)}
                         className="px-4 m-2  flex items-center justify-center flex text-black bg-pink-700 hover:bg-blue-700 rounded-lg font-small rounded-full space-x-1 text-sm px-2 py-2 text-center mb-2"
                       >
                         <img src={editIcon} alt="icon" className="w-4 h-4" /> {/* Adjust size */}

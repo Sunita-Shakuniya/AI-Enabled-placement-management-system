@@ -1,20 +1,14 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
 export default defineConfig({
- /*
-  server:{
-    proxy:{
-      '/api':'http://127.0.0.1:4000/',//proxy work at development mode not for producation
-    },
-
-  },*/
   plugins: [react()],
-  base: '/', // Required for Vercel (use './' if deploying to subpath)
+  base: '/', // This is correct
+  server: {
+    historyApiFallback: true, // ADD THIS LINE
+  },
   build: {
-    outDir: 'dist', // Make sure this matches Vercel's output dir
+    outDir: 'dist',
     emptyOutDir: true,
   }
-  
 })

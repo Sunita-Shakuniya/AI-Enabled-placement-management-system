@@ -3,6 +3,7 @@ import Layout from '../../components/layout/Layout'
 import { Card } from 'flowbite-react'
 import AdminButtons from '../../components/elements/AdminButtons'
 import headerImg from './elements/stdMain.png';
+import { Link } from 'react-router-dom';
 function StudentsResources() {
   return (
     <Layout>
@@ -16,23 +17,26 @@ function StudentsResources() {
         </section> 
         <section>
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 p-2">
-          <Card href="/admin/resources/courses" className="max-w-sm bg-gradient-to-r from-indigo-700 to-violet-700">
+          <Link to="/admin/resources/courses">
+          <Card  className="max-w-sm bg-gradient-to-r from-indigo-700 to-violet-700">
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white  ">
               Courses
             </h5>
             <p className="font-normal text-gray-700 dark:text-gray-400">
               Explore the list courses platform or add new
             </p>
-          </Card>
-          <Card href="/admin/resources/internships" className="max-w-sm bg-gradient-to-r from-indigo-600 to-violet-700">
+          </Card></Link>
+          <Link to="/admin/resources/internships">
+          <Card  className="max-w-sm bg-gradient-to-r from-indigo-600 to-violet-700">
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               Internships  
             </h5>
             <p className="font-normal text-gray-700 dark:text-gray-400">
               Add new <span className='font-bold'> opportunities </span> 
             </p>
-          </Card>
-          <Card href="/admin/resources/hackathons" className="max-w-sm bg-gradient-to-r from-indigo-700 to-violet-800">
+          </Card></Link>
+          <Link to="/admin/resources/hackathons">
+          <Card  className="max-w-sm bg-gradient-to-r from-indigo-700 to-violet-800">
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               Hackathons
             </h5>
@@ -41,15 +45,16 @@ function StudentsResources() {
               <span className='font-bold'> found something new ?
               </span>
             </p>
-          </Card>
-          <Card href="/admin/resources/references" className="max-w-sm bg-gradient-to-r from-indigo-800 to-violet-700">
+          </Card></Link>
+          <Link to="/admin/resources/references">
+          <Card  className="max-w-sm bg-gradient-to-r from-indigo-800 to-violet-700">
             <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               References 
             </h5>
             <p className="font-normal text-gray-700 dark:text-gray-400">
               Wanna add new website or github or new blogs.
             </p>
-          </Card>
+          </Card></Link>
         {/* Add more cards here */}
         </div>
         </section>

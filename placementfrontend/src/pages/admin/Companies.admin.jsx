@@ -5,8 +5,11 @@ import { Card } from "flowbite-react";
 import viewIcon from './elements/view_icon.png';
 import headerImg from './elements/cmMain.png';
 import AdminButtons from "../../components/elements/AdminButtons";
+import { Link, useNavigate } from 'react-router-dom';
+
 function AdminCompanies() {
-    const placementDrives = PlacementDrives(); // Use the custom hook
+  const navigate = useNavigate();
+  const placementDrives = PlacementDrives(); // Use the custom hook
 
   return (
     <Layout>
@@ -20,31 +23,35 @@ function AdminCompanies() {
       
           <div>
             <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2 p-2">
-              <Card href="/admin/companies/top" className="max-w-sm  bg-gradient-to-r from-indigo-700 to-violet-700">
+              <Link to="/admin/companies/top">
+              <Card  className="max-w-sm  bg-gradient-to-r from-indigo-700 to-violet-700">
                 <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                   Top Recruiters
                 </h5>
                 <p className="font-normal text-gray-700 dark:text-gray-400">
                   Explore the list of top hrirng companies.
                 </p>
-              </Card>
-              <Card href="/admin/companies/all" className="max-w-sm bg-gradient-to-r from-indigo-600 to-violet-700">
+              </Card></Link>
+              <Link to="/admin/companies/all">
+              <Card  className="max-w-sm bg-gradient-to-r from-indigo-600 to-violet-700">
                 <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                   Registered Company
                 </h5>
                 <p className="font-normal text-gray-700 dark:text-gray-400">
                   All the details of the companies are here.
                 </p>
-              </Card>
-              <Card href="/admin/companies/offers" className="max-w-sm bg-gradient-to-r from-indigo-700 to-violet-800">
+              </Card></Link>
+              <Link to="/admin/companies/offers">
+              <Card  className="max-w-sm bg-gradient-to-r from-indigo-700 to-violet-800">
                 <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                   Offers Received
                 </h5>
                 <p className="font-normal text-gray-700 dark:text-gray-400">
                   List of our success stories and outcome.
                 </p>
-              </Card>
-              <Card href="/admin/companies/new" className="max-w-sm  bg-gradient-to-r from-indigo-800 to-violet-700">
+              </Card></Link>
+              <Link to="/admin/companies/new"></Link>
+              <Card  className="max-w-sm  bg-gradient-to-r from-indigo-800 to-violet-700">
                 <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                   New Registration
                 </h5>
@@ -60,7 +67,7 @@ function AdminCompanies() {
           <div className='flex flex-row justify-between py-3'>
             <h2 className="text-xl px-20 font-bold text-center my-2 text-indigo-900  mb-4">Track Drives</h2>
             <button
-              onClick={() => window.location.href = `/admin/companies/drives`}
+              onClick={() => navigate('/admin/companies/drives')}
               className="flex items-stretch flex text-black bg-gradient-to-r from-yellow-200 via-yellow-300 to-yellow-500 
               hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-violet-200 dark:focus:ring-violet-900 shadow-lg 
               shadow-black-200/90 dark:shadow-lg dark:shadow-yellow-700/50 font-medium rounded-lg text-sm px-2 py-3 text-center pr-3 me-2 mb-2"

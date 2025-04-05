@@ -11,6 +11,7 @@ import scrollToSection from './function';
 import result from './elements/result.png';
 import track from './elements/track.png';
 import Hackathons from './pages/Hackathons.pages.studnets';
+import { Link } from 'react-router-dom';
 
 function Opportunities() {
   return (
@@ -161,16 +162,16 @@ function Opportunities() {
     
     {/**Result and Track drive */}
     <div className='grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 p-8 '>
-      <a href="opportunities/result" >
+      <Link to="opportunities/result" >
       <div  className="max-w-sm p-2  flex flex-row justify-between bg-gradient-to-r from-white-100 to-back-100 border border-indigo-900 rounded-lg shadow-sm   mx-2">
           <h5 className="mb-2 text-2xl font-semibold tracking-tight text-indigo-900 dark:text-indigo">Results Out</h5>
           <img src={result} alt="icon" className="w-20 h-" />            
-      </div></a>
-      <a href="opportunities/result" >
+      </div></Link>
+      <Link to="opportunities/result" >
       <div className="max-w-sm p-2  flex flex-row justify-between bg-gradient-to-r from-white-100 to-black-100 border border-indigo-900 rounded-lg shadow-sm   mx-2">
           <h5 className="mb-2 text-2xl font-semibold tracking-tight text-indigo-900 dark:text-indigo">Next Drive</h5>
           <img src={track} alt="icon" className="w-20 h-" />
-      </div></a>
+      </div></Link>
     </div>
     </section> 
     <section id='internship'><Internship limit={4} /></section> 
