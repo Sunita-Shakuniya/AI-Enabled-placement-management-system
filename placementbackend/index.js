@@ -22,7 +22,7 @@ const corsOptions = {
     'http://localhost:5173', // Your Vite frontend
     'http://127.0.0.1:5173', // Alternative localhost
     // Add other domains as needed for production
-    'https://ai-enabled-placement-management-system-7zo6.vercel.app'
+    'https://educareer-project.onrender.com'
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],

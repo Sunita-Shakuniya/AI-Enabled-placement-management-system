@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: EduCareer
+    env: node
+    buildCommand: npm install && npm run build
+    staticPath: ./dist
+    routes:
+      - path: /*
+        destination: /index.html

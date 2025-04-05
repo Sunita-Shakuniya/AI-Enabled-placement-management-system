@@ -15,10 +15,6 @@ export default defineConfig({
   build: {
     outDir: 'dist', // Make sure this matches Vercel's output dir
     emptyOutDir: true,
-  },
-  resolve: {
-    alias: {
-      '@': '/src', // Recommended for cleaner imports
-    }
   }
+  
 })
