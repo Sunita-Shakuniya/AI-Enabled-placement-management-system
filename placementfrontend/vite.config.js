@@ -11,4 +11,14 @@ export default defineConfig({
 
   },*/
   plugins: [react()],
+  base: '/', // Required for Vercel (use './' if deploying to subpath)
+  build: {
+    outDir: 'dist', // Make sure this matches Vercel's output dir
+    emptyOutDir: true,
+  },
+  resolve: {
+    alias: {
+      '@': '/src', // Recommended for cleaner imports
+    }
+  }
 })
